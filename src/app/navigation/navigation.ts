@@ -14,4 +14,4 @@ const RootStack = createNativeStackNavigator({
   },
 });
 
-export const Navigation = createStaticNavigation(RootStack);
+export const Navigator = createStaticNavigation(RootStack);

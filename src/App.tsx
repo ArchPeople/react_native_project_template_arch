@@ -1,7 +1,7 @@
-import { Navigation } from "@app/navigation";
+import { Navigator } from "@app/navigation";
 
 export default function App() {
   return (
-    <Navigation />
+    <Navigator />
   );
 }
