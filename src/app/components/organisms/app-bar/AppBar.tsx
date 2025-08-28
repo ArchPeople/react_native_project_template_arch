@@ -23,6 +23,8 @@ const AppBar = ({ title, leading, actions, backgroundColor, elevation }: AppBarP
   );
 };
 
+export default AppBar;
+
 const styles = StyleSheet.create({
   elevatedContainer: {
     elevation: 4,
@@ -48,5 +50,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-export default AppBar;

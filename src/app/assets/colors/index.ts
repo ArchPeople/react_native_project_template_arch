@@ -1,1 +1,1 @@
-export { default as AssetColors } from './AssetColors';
+export { default as AssetColors } from './assetColors';

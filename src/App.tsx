@@ -1,8 +1,8 @@
-import { DemoFeatureScreen } from "@features/DemoFeature";
+import { DemoFeatureView } from "@features/demo-feature";
 
 function App() {
   return (
-    <DemoFeatureScreen/>
+    <DemoFeatureView/>
   );
 }
 

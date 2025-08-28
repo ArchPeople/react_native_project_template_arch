@@ -1,0 +1,1 @@
+export { default as DemoFeatureView } from './view/DemoFeatureView';

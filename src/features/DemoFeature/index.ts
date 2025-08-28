@@ -1,1 +1,0 @@
-export { default as DemoFeatureScreen } from './view/screen/DemoFeatureScreen';
