@@ -4,10 +4,6 @@ import { AppBar, Scaffold } from '@app/components/organisms'
 
 const DemoFeatureScreen = () => {
 
-  const test = () => {
-    
-  }
-
   return (
     <Scaffold>
       <AppBar
