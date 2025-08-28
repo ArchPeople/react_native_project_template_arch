@@ -1,7 +1,7 @@
-import { DemoFeatureView } from "@features/demo-feature";
+import { Navigation } from "@app/navigation";
 
 export default function App() {
   return (
-    <DemoFeatureView/>
+    <Navigation />
   );
 }
