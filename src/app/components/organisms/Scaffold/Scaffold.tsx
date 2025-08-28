@@ -1,5 +1,5 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
-import React, { Children, ReactNode } from 'react'
+import { SafeAreaView, StyleSheet } from 'react-native'
+import React, { ReactNode } from 'react'
 
 type ScaffoldProps = {
   children: ReactNode;
@@ -13,10 +13,10 @@ const Scaffold = ({ children }: ScaffoldProps) => {
   )
 }
 
-export default Scaffold
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-})
+});
+
+export default Scaffold;

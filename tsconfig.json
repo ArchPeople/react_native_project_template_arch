@@ -4,6 +4,8 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["app/components/*"],
+      "@assets/*": ["app/assets/*"],
+      "@features/*": ["features/*"]
     }
   }
 }

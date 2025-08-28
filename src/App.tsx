@@ -1,4 +1,4 @@
-import DemoFeatureScreen from './features/DemoFeature/view/screen/DemoFeatureScreen';
+import { DemoFeatureScreen } from "@features/DemoFeature";
 
 function App() {
   return (

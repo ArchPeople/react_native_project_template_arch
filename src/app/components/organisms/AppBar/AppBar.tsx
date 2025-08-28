@@ -1,6 +1,6 @@
+import { AssetColors } from '@assets/colors';
 import React, { ReactNode } from 'react';
-import { StyleSheet, Text, View, ViewStyle } from 'react-native';
-import { StatusBar } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 type AppBarProps = {
   title?: string;
@@ -13,7 +13,7 @@ type AppBarProps = {
 const AppBar = ({ title, leading, actions, backgroundColor, elevation }: AppBarProps) => {
 
   return (
-    <View style={[elevation ? styles.elevatedContainer : null, { backgroundColor: backgroundColor ? backgroundColor : 'white' }]}>
+    <View style={[elevation ? styles.elevatedContainer : null, { backgroundColor: backgroundColor ? backgroundColor : AssetColors.white }]}>
       <View style={styles.inner}>
         {leading ? <View style={styles.side}>{leading}</View> : null}
         <Text style={styles.title}>{title}</Text>
@@ -22,8 +22,6 @@ const AppBar = ({ title, leading, actions, backgroundColor, elevation }: AppBarP
     </View>
   );
 };
-
-export default AppBar;
 
 const styles = StyleSheet.create({
   elevatedContainer: {
@@ -50,3 +48,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default AppBar;

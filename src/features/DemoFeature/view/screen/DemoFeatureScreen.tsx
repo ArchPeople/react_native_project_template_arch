@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native'
 import React from 'react'
 import { AppBar, Scaffold } from '@components/organisms'
 
-export default function DemoFeatureScreen() {
+const DemoFeatureScreen = () => {
   return (
     <Scaffold>
       <AppBar
@@ -20,4 +20,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   }
-})
+});
+
+export default DemoFeatureScreen;
