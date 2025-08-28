@@ -1,4 +1,4 @@
-import { AssetColors } from '@assets/colors';
+import { AssetColors } from '@app/assets';
 import React, { ReactNode } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -10,7 +10,7 @@ type AppBarProps = {
   elevation?: number;
 };
 
-const AppBar = ({ title, leading, actions, backgroundColor, elevation }: AppBarProps) => {
+export const AppBar = ({ title, leading, actions, backgroundColor, elevation }: AppBarProps) => {
 
   return (
     <View style={[elevation ? styles.elevatedContainer : null, { backgroundColor: backgroundColor ? backgroundColor : AssetColors.white }]}>
@@ -22,8 +22,6 @@ const AppBar = ({ title, leading, actions, backgroundColor, elevation }: AppBarP
     </View>
   );
 };
-
-export default AppBar;
 
 const styles = StyleSheet.create({
   elevatedContainer: {

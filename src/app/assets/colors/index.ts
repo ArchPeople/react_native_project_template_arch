@@ -1,1 +1,0 @@
-export { default as AssetColors } from './assetColors';

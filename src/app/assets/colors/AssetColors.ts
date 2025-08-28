@@ -1,4 +1,4 @@
-const AssetColors = {
+export const AssetColors = {
   white: "#FFFFFF",
   black: "#000000",
   grey: "#808080",
@@ -10,5 +10,3 @@ const AssetColors = {
   orange: "#FF9800",
   purple: "#9C27B0",
 };
-
-export default AssetColors;

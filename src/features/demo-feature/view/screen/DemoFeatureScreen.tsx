@@ -1,8 +1,13 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
-import { AppBar, Scaffold } from '@components/organisms'
+import { AppBar, Scaffold } from '@app/components/organisms'
 
 const DemoFeatureScreen = () => {
+
+  const test = () => {
+    
+  }
+
   return (
     <Scaffold>
       <AppBar

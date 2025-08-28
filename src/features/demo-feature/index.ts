@@ -1,1 +1,1 @@
-export { default as DemoFeatureView } from './view/DemoFeatureView';
+export { DemoFeatureView } from './view/DemoFeatureView';

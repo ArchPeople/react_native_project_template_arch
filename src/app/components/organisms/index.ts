@@ -1,2 +1,2 @@
-export { default as AppBar } from './app-bar/AppBar';
-export { default as Scaffold } from './scaffold/Scaffold';
+export { AppBar } from './app-bar/AppBar';
+export { Scaffold } from './scaffold/Scaffold';

@@ -1,9 +1,7 @@
 import { DemoFeatureView } from "@features/demo-feature";
 
-function App() {
+export default function App() {
   return (
     <DemoFeatureView/>
   );
 }
-
-export default App;

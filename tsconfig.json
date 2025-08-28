@@ -5,9 +5,9 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@components/*": ["app/components/*"],
-      "@assets/*": ["app/assets/*"],
-      "@features/*": ["features/*"]
+      "@app/*": ["app/*"],
+      "@features/*": ["features/*"],
+      "@core/*": ["core/*"]
     }
   }
 }
