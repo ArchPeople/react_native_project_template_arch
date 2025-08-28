@@ -1,5 +1,6 @@
-import { SafeAreaView, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React, { ReactNode } from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 type ScaffoldProps = {
   children: ReactNode;
