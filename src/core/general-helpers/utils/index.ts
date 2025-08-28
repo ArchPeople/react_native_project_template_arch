@@ -1,2 +1,2 @@
-export { NumberUtil } from './number/numberUtil';
-export { StringUtil } from './string/stringUtil';
+export { numberUtil } from './number/numberUtil';
+export { stringUtil } from './string/stringUtil';
