@@ -10,10 +10,24 @@ type AppBarProps = {
   elevation?: number;
 };
 
-export const AppBar = ({ title, leading, actions, backgroundColor, elevation }: AppBarProps) => {
-
+export const AppBar = ({
+  title,
+  leading,
+  actions,
+  backgroundColor,
+  elevation,
+}: AppBarProps) => {
   return (
-    <View style={[elevation ? styles.elevatedContainer : null, { backgroundColor: backgroundColor ? backgroundColor : assetColors.white }]}>
+    <View
+      style={[
+        elevation ? styles.elevatedContainer : null,
+        {
+          backgroundColor: backgroundColor
+            ? backgroundColor
+            : assetColors.white,
+        },
+      ]}
+    >
       <View style={styles.inner}>
         {leading ? <View style={styles.side}>{leading}</View> : null}
         <Text style={styles.title}>{title}</Text>

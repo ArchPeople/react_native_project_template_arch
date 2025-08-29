@@ -1,1 +1,1 @@
-export { Navigator } from "@app/navigation/navigator";
+export { Navigator } from '@app/navigation/navigator';
