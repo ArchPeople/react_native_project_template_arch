@@ -1,13 +1,23 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, { ReactNode } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { assetColors } from '@app/assets';
+import { Gap } from '@app/components/atoms';
 
 type ScaffoldProps = {
   children: ReactNode;
 };
 
 export const Scaffold = ({ children }: ScaffoldProps) => {
-  return <SafeAreaView style={styles.container}>{children}</SafeAreaView>;
+  const insets = useSafeAreaInsets();
+  const statusBarHeight = insets.top;
+
+  return (
+    <View style={styles.container}>
+      <Gap height={statusBarHeight} backgroundColor={assetColors.white} />
+      {children}
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
