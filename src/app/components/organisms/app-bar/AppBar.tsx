@@ -10,13 +10,13 @@ type AppBarProps = {
   elevation?: number;
 };
 
-export const AppBar = ({
+export const AppBar: React.FC<AppBarProps> = ({
   title,
   leading,
   actions,
   backgroundColor,
   elevation,
-}: AppBarProps) => {
+}) => {
   return (
     <View
       style={[

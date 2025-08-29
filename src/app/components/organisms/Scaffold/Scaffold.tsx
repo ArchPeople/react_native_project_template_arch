@@ -8,7 +8,7 @@ type ScaffoldProps = {
   children: ReactNode;
 };
 
-export const Scaffold = ({ children }: ScaffoldProps) => {
+export const Scaffold: React.FC<ScaffoldProps> = ({ children }) => {
   const insets = useSafeAreaInsets();
   const statusBarHeight = insets.top;
 
