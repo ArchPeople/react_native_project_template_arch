@@ -1,26 +1,37 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { Button, StyleSheet, View } from 'react-native';
+import React, { useEffect } from 'react';
 import { AppBar, Scaffold } from '@app/components/organisms';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '@app/store/store';
-import { setTitle } from '@features/demo-feature/reducer/demoSlice';
+import { demoSliceApiFunction } from '@features/demo-feature/reducer/demoSlice';
+import { useAppDispatch } from '@core/hooks';
+import { viewState } from '@core/common/view-state/viewState';
 
 const DemoFeatureScreen = () => {
-  const title = useSelector((state: RootState) => state.demo.title);
-  const dispatch = useDispatch();
+  const demoFeatureState = useSelector(
+    (state: RootState) => state.demo.demoFeatureState,
+  );
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(demoSliceApiFunction());
+  }, []);
+
+  useEffect(() => {
+    if (demoFeatureState === viewState.loading) {
+      // Do something when loading
+    } else if (demoFeatureState === viewState.success) {
+      // Do something when success
+    } else if (demoFeatureState === viewState.error) {
+      // Do something when error
+    }
+  }, [demoFeatureState]);
 
   return (
     <Scaffold>
       <AppBar title="Demo Feature" />
-      <View style={styles.container}>
-        <Text>{title}</Text>
-        <Button
-          title="Change title"
-          onPress={() => {
-            dispatch(setTitle());
-          }}
-        ></Button>
-      </View>
+      <View style={styles.container}></View>
     </Scaffold>
   );
 };

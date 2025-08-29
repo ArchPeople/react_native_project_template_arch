@@ -1,0 +1,10 @@
+import { IBaseFailure } from '@core/common/base/baseFailure.interface';
+import { demoData } from '@core/data/remote';
+import { IDemoDataResponse } from '@core/data/remote/demo-data/interface/demoDataResponse.interface';
+
+export const demoFeatureRepository = {
+  getDemoData: async (): Promise<IDemoDataResponse | IBaseFailure> => {
+    const result = await demoData.fetchDemoData();
+    return result;
+  },
+};
