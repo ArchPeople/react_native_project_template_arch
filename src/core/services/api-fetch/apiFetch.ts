@@ -1,5 +1,10 @@
 import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
-import { IDeleteApi, IGetApi, IPostApi, IPutApi } from './types';
+import {
+  IDeleteApi,
+  IGetApi,
+  IPostApi,
+  IPutApi,
+} from './interface/apiFetch.interface';
 
 const api = axios.create({
   timeout: 10000,
@@ -24,7 +29,7 @@ api.interceptors.response.use(
 );
 
 export const apiFetch = {
-  get: async (url: string, config?: IGetApi) => {
+  getApi: async (url: string, config?: IGetApi) => {
     try {
       const response: AxiosResponse = await api.get(url, {
         params: config?.params,
@@ -37,7 +42,7 @@ export const apiFetch = {
     }
   },
 
-  post: async (url: string, config?: IPostApi) => {
+  postApi: async (url: string, config?: IPostApi) => {
     try {
       const response: AxiosResponse = await api.post(url, config?.body, {
         params: config?.params,
@@ -50,7 +55,7 @@ export const apiFetch = {
     }
   },
 
-  put: async (url: string, config?: IPutApi) => {
+  putApi: async (url: string, config?: IPutApi) => {
     try {
       const response: AxiosResponse = await api.put(url, config?.body, {
         params: config?.params,
@@ -63,7 +68,7 @@ export const apiFetch = {
     }
   },
 
-  delete: async (url: string, config?: IDeleteApi) => {
+  deleteApi: async (url: string, config?: IDeleteApi) => {
     try {
       const response: AxiosResponse = await api.delete(url, {
         params: config?.params,
