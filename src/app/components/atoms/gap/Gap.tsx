@@ -1,5 +1,5 @@
 import { View } from 'react-native';
-import React from 'react';
+import React, { memo } from 'react';
 
 type GapProps = {
   height?: number;
@@ -7,12 +7,14 @@ type GapProps = {
   backgroundColor?: string;
 };
 
-export const Gap = ({ height, width, backgroundColor }: GapProps) => {
-  return (
-    <View
-      style={[
-        { height: height, width: width, backgroundColor: backgroundColor },
-      ]}
-    />
-  );
-};
+export const Gap: React.FC<GapProps> = memo(
+  ({ height, width, backgroundColor }) => {
+    return (
+      <View
+        style={[
+          { height: height, width: width, backgroundColor: backgroundColor },
+        ]}
+      />
+    );
+  },
+);

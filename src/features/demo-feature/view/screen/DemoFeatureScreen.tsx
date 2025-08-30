@@ -1,4 +1,4 @@
-import { Button, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, { useEffect } from 'react';
 import { AppBar, Scaffold } from '@app/components/organisms';
 import { useSelector } from 'react-redux';
@@ -6,6 +6,8 @@ import { RootState } from '@app/store/store';
 import { demoSliceApiFunction } from '@features/demo-feature/reducer/demoSlice';
 import { useAppDispatch } from '@core/hooks';
 import { viewState } from '@core/common/view-state/viewState';
+import { assetColors } from '@app/assets';
+import { ButtonBase } from '@app/components/atoms';
 
 const DemoFeatureScreen = () => {
   const demoFeatureState = useSelector(
@@ -31,7 +33,9 @@ const DemoFeatureScreen = () => {
   return (
     <Scaffold>
       <AppBar title="Demo Feature" />
-      <View style={styles.container}></View>
+      <View style={styles.container}>
+        <ButtonBase label={'Check'} />
+      </View>
     </Scaffold>
   );
 };
@@ -41,7 +45,6 @@ export default DemoFeatureScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-    paddingLeft: 16,
+    backgroundColor: assetColors.systemMode,
   },
 });
