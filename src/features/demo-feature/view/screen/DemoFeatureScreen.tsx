@@ -1,13 +1,13 @@
 import { StyleSheet, View } from 'react-native';
 import React, { useEffect } from 'react';
-import { AppBar, Scaffold } from '@app/components/organisms';
+import { AppBar, Scaffold, StatusController } from '@app/components/organisms';
 import { useSelector } from 'react-redux';
 import { RootState } from '@app/store/store';
 import { demoSliceApiFunction } from '@features/demo-feature/reducer/demoSlice';
 import { useAppDispatch } from '@core/hooks';
 import { viewState } from '@core/common/view-state/viewState';
 import { assetColors } from '@app/assets';
-import { ButtonBase } from '@app/components/atoms';
+import { themePadding } from '@app/themes';
 
 const DemoFeatureScreen = () => {
   const demoFeatureState = useSelector(
@@ -34,7 +34,21 @@ const DemoFeatureScreen = () => {
     <Scaffold>
       <AppBar title="Demo Feature" />
       <View style={styles.container}>
-        <ButtonBase label={'Check'} />
+        <StatusController
+          title={'Check API Status'}
+          buttonLabel={'Check'}
+          disabled={demoFeatureState === viewState.loading}
+          statusColor={
+            demoFeatureState === viewState.loading
+              ? assetColors.yellow
+              : demoFeatureState === viewState.success
+              ? assetColors.green
+              : assetColors.red
+          }
+          onPressed={() => {
+            dispatch(demoSliceApiFunction());
+          }}
+        />
       </View>
     </Scaffold>
   );
@@ -46,5 +60,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: assetColors.systemMode,
+    ...themePadding.ph16,
   },
 });
