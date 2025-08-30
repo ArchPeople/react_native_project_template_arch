@@ -11,6 +11,7 @@
     "generate:env": "chmod +x generator/generate-env.sh && ./generator/generate-env.sh"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-navigation/native": "^7.1.17",
     "@react-navigation/native-stack": "^7.3.25",
     "@reduxjs/toolkit": "^2.8.2",
