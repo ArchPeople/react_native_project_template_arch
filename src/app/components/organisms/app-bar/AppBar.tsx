@@ -1,9 +1,14 @@
 import { assetColors } from '@app/assets';
-import { themeSystemMode } from '@app/themes';
+import { TextBase } from '@app/components/atoms';
+import {
+  themeFonts,
+  themePadding,
+  themeShadow,
+  themeSystemMode,
+} from '@app/themes';
 import { ds } from '@core/general-helpers/extensions';
 import React, { ReactNode } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
+import { StyleSheet, View } from 'react-native';
 
 type AppBarProps = {
   title?: string;
@@ -63,7 +68,9 @@ export const AppBar: React.FC<AppBarProps> = ({
     >
       <View style={styles.inner}>
         {leading ? <View style={styles.side}>{leading}</View> : null}
-        <Text style={[styles.title, { color: getTitleColor() }]}>{title}</Text>
+        <TextBase style={[styles.title, { color: getTitleColor() }]}>
+          {title}
+        </TextBase>
         {actions ? <View style={styles.side}>{actions}</View> : null}
       </View>
     </View>
@@ -72,21 +79,18 @@ export const AppBar: React.FC<AppBarProps> = ({
 
 const styles = StyleSheet.create({
   elevatedContainer: {
-    elevation: 4,
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
+    ...themeShadow.mediumShadow,
   },
   inner: {
+    ...themePadding.ph16,
     height: ds(56),
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: ds(16),
     justifyContent: 'space-between',
   },
   title: {
+    ...themeFonts.bodyMdRegular,
     flex: 1,
-    fontSize: 18,
   },
   side: {
     width: ds(40),
