@@ -38,12 +38,12 @@ export const AppBar: React.FC<AppBarProps> = ({
   const getBackgroundColor = () => {
     {
       if (
-        backgroundColor != null &&
+        backgroundColor !== null &&
         themeSystemMode.getSystemMode() == themeSystemMode.light
       ) {
         return backgroundColor;
       } else if (
-        backgroundDarkColor != null &&
+        backgroundDarkColor !== null &&
         themeSystemMode.getSystemMode() == themeSystemMode.dark
       ) {
         return backgroundDarkColor;

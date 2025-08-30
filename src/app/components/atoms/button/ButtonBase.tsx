@@ -47,12 +47,12 @@ export const ButtonBase: React.FC<ButtonBaseProps> = memo(
         return assetColors.grey;
       } else {
         if (
-          labelColor != null &&
+          labelColor !== null &&
           themeSystemMode.getSystemMode() == themeSystemMode.light
         ) {
           return labelColor;
         } else if (
-          labelDarkColor != null &&
+          labelDarkColor !== null &&
           themeSystemMode.getSystemMode() == themeSystemMode.dark
         ) {
           return labelDarkColor;
@@ -67,12 +67,12 @@ export const ButtonBase: React.FC<ButtonBaseProps> = memo(
         return assetColors.lightGrey;
       } else {
         if (
-          backgroundColor != null &&
+          backgroundColor !== null &&
           themeSystemMode.getSystemMode() == themeSystemMode.light
         ) {
           return backgroundColor;
         } else if (
-          backgroundDarkColor != null &&
+          backgroundDarkColor !== null &&
           themeSystemMode.getSystemMode() == themeSystemMode.dark
         ) {
           return backgroundDarkColor;

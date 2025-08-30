@@ -15,12 +15,12 @@ export const TextBase: React.FC<TextBaseProps> = memo(
   ({ accessibilityLabel, style, color, darkColor, children }) => {
     const getTextColor = () => {
       if (
-        color != null &&
+        color !== null &&
         themeSystemMode.getSystemMode() == themeSystemMode.light
       ) {
         return color;
       } else if (
-        darkColor != null &&
+        darkColor !== null &&
         themeSystemMode.getSystemMode() == themeSystemMode.dark
       ) {
         return darkColor;
