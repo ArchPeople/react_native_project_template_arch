@@ -1,19 +1,18 @@
 import { Text } from 'react-native';
 import React, { memo, ReactNode } from 'react';
-import { themeSystemMode } from '@app/themes';
+import { themeFonts, themeSystemMode } from '@app/themes';
 import { assetColors } from '@app/assets';
 
 type TextBaseProps = {
   accessibilityLabel?: string;
   style?: any;
   color?: string;
-  size?: number;
   darkColor?: string;
   children?: ReactNode;
 };
 
 export const TextBase: React.FC<TextBaseProps> = memo(
-  ({ accessibilityLabel, style, color, size, darkColor, children }) => {
+  ({ accessibilityLabel, style, color, darkColor, children }) => {
     const getTextColor = () => {
       if (
         color != null &&
@@ -37,7 +36,7 @@ export const TextBase: React.FC<TextBaseProps> = memo(
     return (
       <Text
         accessibilityLabel={'text-' + accessibilityLabel}
-        style={[style, { color: getTextColor(), fontSize: size }]}
+        style={[style ?? themeFonts.defaultTextBase, { color: getTextColor() }]}
       >
         {children}
       </Text>

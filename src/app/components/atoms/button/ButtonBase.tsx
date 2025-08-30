@@ -2,12 +2,11 @@ import {
   GestureResponderEvent,
   Pressable,
   StyleSheet,
-  Text,
   TextStyle,
 } from 'react-native';
 import React, { memo, use, useState } from 'react';
 import { assetColors } from '@app/assets';
-import { themeSystemMode } from '@app/themes';
+import { themeFonts, themeSystemMode } from '@app/themes';
 import { ds } from '@core/general-helpers/extensions';
 import { TextBase } from '@app/components/atoms';
 
@@ -108,7 +107,10 @@ export const ButtonBase: React.FC<ButtonBaseProps> = memo(
           },
         ]}
       >
-        <TextBase style={[labelStyle]} color={getLabelColor()} size={ds(16)}>
+        <TextBase
+          style={[labelStyle, themeFonts.bodyMdRegular]}
+          color={getLabelColor()}
+        >
           {label}
         </TextBase>
       </Pressable>
