@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "generate:env": "chmod +x generator/generate-env.sh && ./generator/generate-env.sh"
   },
   "dependencies": {
     "@react-navigation/native": "^7.1.17",
