@@ -1,5 +1,5 @@
 import { GestureResponderEvent, StyleSheet, View } from 'react-native';
-import React from 'react';
+import React, { memo } from 'react';
 import { ActionPanel } from '@app/components/molecules';
 import { themeBorder, themePadding } from '@app/themes';
 import { assetColors } from '@app/assets';
@@ -14,32 +14,28 @@ type StatusControllerProps = {
   statusColor?: string;
 };
 
-export const StatusController: React.FC<StatusControllerProps> = ({
-  title,
-  buttonLabel,
-  onPressed,
-  disabled,
-  statusColor,
-}) => {
-  return (
-    <View style={styles.main}>
-      <View
-        style={{
-          ...themeBorder.bc4,
-          backgroundColor: statusColor,
-          height: ds(40),
-        }}
-      />
-      <Gap height={ds(20)} />
-      <ActionPanel
-        title={title}
-        buttonLabel={buttonLabel}
-        onPressed={onPressed}
-        disabled={disabled}
-      />
-    </View>
-  );
-};
+export const StatusController: React.FC<StatusControllerProps> = memo(
+  ({ title, buttonLabel, onPressed, disabled, statusColor }) => {
+    return (
+      <View style={styles.main}>
+        <View
+          style={{
+            ...themeBorder.bc4,
+            backgroundColor: statusColor,
+            height: ds(40),
+          }}
+        />
+        <Gap height={ds(20)} />
+        <ActionPanel
+          title={title}
+          buttonLabel={buttonLabel}
+          onPressed={onPressed}
+          disabled={disabled}
+        />
+      </View>
+    );
+  },
+);
 
 const styles = StyleSheet.create({
   main: {
