@@ -1,97 +1,133 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Project Template - "Arch"
 
-# Getting Started
+> A Template to start React Native app development with minimal effort. Introducing the "Arch".
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Quick Start 🎮
 
-## Step 1: Start Metro
-
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+```bash
+git clone https://github.com/michmadheo/react_native_project_template_arch.git
 ```
 
-## Step 2: Build and run your app
+Or download via [releases](https://github.com/michmadheo/react_native_project_template_arch/releases).
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## What's included 🚀
 
-### Android
+To ease your project setup, here you can find:
 
-```sh
-# Using npm
-npm run android
+- ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
+- ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
+- ✅ Easy to use [redux toolkit](https://www.npmjs.com/package/@reduxjs/toolkit) design pattern (see [demo-feature](src/features/demo-feature) for example)
+- ✅ Simple & reliable local data source storage with [react-native-async-storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage)
+- ✅ Assortment of ready-to-use themes for styling (see [themes](src/app/themes) for example)
+- ✅ Helpful utilities and extensions (see [general-helpers](src/core/general-helpers) for example)
+- ✅ Structured atomic design pattern for components (see [components](src/app/components) for example)
 
-# OR using Yarn
-yarn android
+Check the [package.json](package.json) for packages versions.
+
+> [!TIP]
+> Didn't like what's included? want to swap packages? feel free to do it!
+
+## Requirements 🛠️
+
+These are the requirements to run this template:
+
+- Java minimum version 17
+- React Native version 0.81.1
+- Node version 18.0.0 - 20.0.0
+- pnpm version 10.12.1
+- Android Studio minimum version Meerkat 2024.3.1
+- Xcode up minimum version 16.4
+
+> [!IMPORTANT]
+> You can change pnpm to either npm or yarn. If so, please delete pnpm-lock.yaml first
+
+> [!NOTE]
+> Requirements doesn't match your setup? find another template version in [releases](https://github.com/michmadheo/react_native_project_template_arch/releases).
+
+## Change package name 1/3 (Android) 📦
+
+- Search for "com.react_native_project_template_arch" and replace it with your package (Ex: com.awesome.app)
+
+- Change the path of android/app/src/main/java/com/com.react_native_project_template_arch to your package name (Ex: android/app/src/main/java/com/com.awesome.app)
+
+## Change package name 2/3 (iOS) 📦
+
+- Open xcode and change the bundle identifer to your package (Ex: com.awesome.app)
+
+## Change package name 3/3 (Repo name) 📦
+
+- In ios folder, look at these files:
+
+```bash
+react_native_project_template_arch
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+react_native_project_template_arch.xcodeproj
 ```
 
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
+```bash
+react_native_project_template_arch.xcworkspace
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```bash
+react_native_project_template_arch.xcodeproj/xcshareddata/xcschemes/react_native_project_template_arch.xcscheme
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+- Rename each folder name or xc files above with your repository name
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- Search for react_native_project_template_arch and replace it with your gituhub repository name
 
-## Step 3: Modify your app
+- Run these commands to clean the app before running the app:
 
-Now that you have successfully run the app, let's make changes!
+```bash
+rm -rf ios/build && rm -rf android/build
+rm -rf Pods Podfile.lock
+cd android && ./gradlew clean
+cd ios && pod install --repo-update
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## Change app name (First time change) 📲
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+Search for "Arch RN App" and rename it with your app name
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## Manual Change app name (Android) 📲
 
-## Congratulations! :tada:
+Go to strings.xml and change the value to your app name
 
-You've successfully run and modified your React Native App. :partying_face:
+## Manual Change app name (iOS) 📲
 
-### Now what?
+Go to info.plist and change the value of CFBundleDisplayName and CFBundleName to your app name
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## Change app icon (Android) ✨
 
-# Troubleshooting
+- Check out this [Youtube video](https://www.youtube.com/watch?v=FRCWWvlTubQ) on how to change both icons for Android and iOS
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## Run the app 🎉
 
-# Learn More
+Create a .env file in root project with this example content:
 
-To learn more about React Native, take a look at the following resources:
+```bash
+Demo=demo
+OTHER_KEY_1=othervalue1
+OTHER_KEY_2=othervalue2
+```
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+> [!WARNING]
+> Please include the 'Demo=demo' if this is the first time you use this template. You can change it later on config
+
+And generate the env for the config with:
+
+```bash
+pnpm run generate:env
+```
+
+To run the app, do:
+
+```bash
+pnpm run android
+pnpm run ios
+```
+
+> [!IMPORTANT]
+> Once you are ready to build the app, don't forget to delete the .env file after you've generated the config. Else, your .env file's contents will be shown if the app is being decompiled
