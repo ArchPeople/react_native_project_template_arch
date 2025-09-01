@@ -33,8 +33,8 @@ These are the requirements to run this template:
 
 - Java minimum version 17
 - React Native version 0.81.1
-- Node version 18.0.0 - 20.0.0
-- pnpm version 10.12.1
+- Node version 20.0.0
+- pnpm version 10.15.0
 - Android Studio minimum version Meerkat 2024.3.1
 - Xcode up minimum version 16.4
 
