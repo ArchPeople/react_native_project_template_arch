@@ -78,13 +78,10 @@ react_native_project_template_arch.xcodeproj/xcshareddata/xcschemes/react_native
 
 - Search for react_native_project_template_arch and replace it with your gituhub repository name
 
-- Run these commands to clean the app before running the app:
+- Clean the app by running:
 
 ```bash
-rm -rf ios/build && rm -rf android/build
-rm -rf Pods Podfile.lock
-cd android && ./gradlew clean
-cd ios && pod install --repo-update
+pnpm run clean
 ```
 
 ## Change app name (First time change) 📲
