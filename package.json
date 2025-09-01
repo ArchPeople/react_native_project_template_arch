@@ -8,12 +8,13 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
+    "clean": "rm -rf android/build ios/build && pnpm install && cd android && ./gradlew clean && cd .. && rm -rf Pods podfile.lock && cd ios && pod install --repo-update && cd ..",
     "generate:env": "chmod +x generator/generate-env.sh && ./generator/generate-env.sh"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-navigation/native": "^7.1.17",
-    "@react-navigation/native-stack": "^7.3.25",
+    "@react-navigation/native-stack": "^7.3.26",
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.11.0",
     "react": "19.1.0",
@@ -23,25 +24,25 @@
     "react-redux": "^9.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.25.3",
-    "@babel/runtime": "^7.25.0",
-    "@react-native-community/cli": "20.0.0",
-    "@react-native-community/cli-platform-android": "20.0.0",
-    "@react-native-community/cli-platform-ios": "20.0.0",
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/runtime": "^7.28.3",
+    "@react-native-community/cli": "20.0.1",
+    "@react-native-community/cli-platform-android": "20.0.1",
+    "@react-native-community/cli-platform-ios": "20.0.1",
     "@react-native/babel-preset": "0.81.1",
     "@react-native/eslint-config": "0.81.1",
     "@react-native/metro-config": "0.81.1",
     "@react-native/typescript-config": "0.81.1",
-    "@types/jest": "^29.5.13",
-    "@types/react": "^19.1.0",
+    "@types/jest": "^30.0.0",
+    "@types/react": "^19.1.12",
     "@types/react-test-renderer": "^19.1.0",
     "babel-plugin-module-resolver": "^5.0.2",
-    "eslint": "^8.19.0",
-    "jest": "^29.6.3",
-    "prettier": "2.8.8",
+    "eslint": "^9.34.0",
+    "jest": "^30.1.2",
+    "prettier": "3.6.2",
     "react-test-renderer": "19.1.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "engines": {
     "node": ">=20"
