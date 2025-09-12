@@ -1,1 +1,1 @@
-export { assetColors } from './colors/assetColors';
+export { assetColors } from './colors/tempAssetColors';
