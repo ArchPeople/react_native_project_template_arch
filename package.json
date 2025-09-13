@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "clean": "rm -rf android/build ios/build && pnpm install && cd android && ./gradlew clean && cd .. && rm -rf Pods podfile.lock && cd ios && pod install --repo-update && cd ..",
+    "clean": "rm -rf $TMPDIR/metro-cache $TMPDIR/react-* android/build ios/build android/.gradle android/app/build ios/Pods ios/Podfile.lock && yarn install && cd android && ./gradlew clean && cd .. && cd ios && pod install --repo-update && cd ..",
     "generate:env": "chmod +x generator/generate-env.sh && ./generator/generate-env.sh"
   },
   "dependencies": {
