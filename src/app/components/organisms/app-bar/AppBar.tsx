@@ -7,6 +7,7 @@ import {
   themeSystemMode,
 } from '@app/themes';
 import { ds } from '@core/general-helpers/extensions';
+import { useSystemMode } from '@core/hooks';
 import React, { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 
@@ -27,8 +28,9 @@ export const AppBar: React.FC<AppBarProps> = ({
   backgroundDarkColor,
   elevation,
 }) => {
+  const { systemMode } = useSystemMode();
   const getTitleColor = () => {
-    if (themeSystemMode.getSystemMode() == themeSystemMode.light) {
+    if (systemMode == themeSystemMode.light) {
       return assetColors.black;
     } else {
       return assetColors.white;
@@ -37,18 +39,15 @@ export const AppBar: React.FC<AppBarProps> = ({
 
   const getBackgroundColor = () => {
     {
-      if (
-        backgroundColor != null &&
-        themeSystemMode.getSystemMode() == themeSystemMode.light
-      ) {
+      if (backgroundColor != null && systemMode == themeSystemMode.light) {
         return backgroundColor;
       } else if (
         backgroundDarkColor != null &&
-        themeSystemMode.getSystemMode() == themeSystemMode.dark
+        systemMode == themeSystemMode.dark
       ) {
         return backgroundDarkColor;
       } else {
-        if (themeSystemMode.getSystemMode() == themeSystemMode.light) {
+        if (systemMode == themeSystemMode.light) {
           return assetColors.lightMode;
         } else {
           return assetColors.darkMode;

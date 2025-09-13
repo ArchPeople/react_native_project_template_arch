@@ -7,12 +7,15 @@ import { demoSliceApiFunction } from '@features/demo-feature/reducer/demoSlice';
 import { useAppDispatch } from '@core/hooks';
 import { viewState } from '@core/common/view-state/viewState';
 import { assetColors } from '@app/assets';
-import { themePadding } from '@app/themes';
+import { themePadding, themeSystemMode } from '@app/themes';
+import { useSystemMode } from '@core/hooks';
 
 const DemoFeatureScreen = () => {
   const demoFeatureState = useSelector(
     (state: RootState) => state.demo.demoFeatureState,
   );
+
+  const { systemMode } = useSystemMode();
 
   const dispatch = useAppDispatch();
 
@@ -33,7 +36,17 @@ const DemoFeatureScreen = () => {
   return (
     <Scaffold>
       <AppBar title="Demo Feature" />
-      <View style={styles.container}>
+      <View
+        style={[
+          styles.container,
+          {
+            backgroundColor:
+              systemMode == themeSystemMode.light
+                ? assetColors.lightMode
+                : assetColors.darkMode,
+          },
+        ]}
+      >
         <StatusController
           title={'Check API Status'}
           buttonLabel={'Check'}
@@ -42,8 +55,8 @@ const DemoFeatureScreen = () => {
             demoFeatureState === viewState.loading
               ? assetColors.yellow
               : demoFeatureState === viewState.success
-              ? assetColors.green
-              : assetColors.red
+                ? assetColors.green
+                : assetColors.red
           }
           onPressed={() => {
             dispatch(demoSliceApiFunction());
@@ -59,7 +72,6 @@ export default DemoFeatureScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: assetColors.systemMode,
     ...themePadding.ph16,
   },
 });
