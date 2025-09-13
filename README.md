@@ -22,6 +22,7 @@ Essentials To ease your project setup. Here you can find:
 - ✅ Assortment of ready-to-use themes for styling (see [themes](src/app/themes) for example)
 - ✅ Helpful utilities and extensions (see [general-helpers](src/core/general-helpers) for example)
 - ✅ Structured atomic design pattern for components (see [components](src/app/components) for example)
+- ✅ Everyone's favorite dark mode, is supported (see [useSystemMode](src/core/hooks/system-mode/useSystemMode.ts) hooks for usage)
 
 Check the [package.json](package.json) for packages versions.
 
