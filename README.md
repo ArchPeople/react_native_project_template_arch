@@ -14,6 +14,7 @@ Or download via [releases](https://github.com/michmadheo/react_native_project_te
 
 Essentials To ease your project setup. Here you can find:
 
+- ✅ React Native 0.81.1, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
 - ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
 - ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
 - ✅ Easy to use [redux-toolkit](https://www.npmjs.com/package/@reduxjs/toolkit) design pattern (see [demo-feature](src/features/demo-feature) for example)
@@ -32,14 +33,10 @@ Check the [package.json](package.json) for packages versions.
 These are the requirements to run this template:
 
 - Java minimum version 17
-- React Native version 0.81.1
 - Node version 20.0.0
-- pnpm version 10.15.0
+- yarn version 1.22.22
 - Android Studio minimum version Meerkat 2024.3.1
 - Xcode up minimum version 16.4
-
-> [!IMPORTANT]
-> You can change pnpm to either npm or yarn. If so, please delete pnpm-lock.yaml first
 
 > [!NOTE]
 > Requirements doesn't match your setup? find another template version in [releases](https://github.com/michmadheo/react_native_project_template_arch/releases).
@@ -76,12 +73,12 @@ react_native_project_template_arch.xcodeproj/xcshareddata/xcschemes/react_native
 
 - Rename each folder name or xc files above with your repository name
 
-- Search for react_native_project_template_arch and replace it with your gituhub repository name
+- Search for react_native_project_template_arch and replace it with your github repository name
 
 - Clean the app by running:
 
 ```bash
-pnpm run clean
+yarn run clean
 ```
 
 ## Change app name (First time change) 📲
@@ -116,14 +113,14 @@ OTHER_KEY_2=othervalue2
 And generate the env for the config with:
 
 ```bash
-pnpm run generate:env
+yarn run generate:env
 ```
 
 To run the app, do:
 
 ```bash
-pnpm run android
-pnpm run ios
+yarn run android
+yarn run ios
 ```
 
 > [!IMPORTANT]
