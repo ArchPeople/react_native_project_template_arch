@@ -4,18 +4,20 @@ import { assetColors } from '@app/assets';
 import { Gap } from '@app/components/atoms';
 import { screenSizeUtil } from '@core/general-helpers/utils/screen-size/screnSizeUtil';
 import { themeSystemMode } from '@app/themes';
+import { useSystemMode } from '@core/hooks';
 
 type ScaffoldProps = {
   children: ReactNode;
 };
 
 export const Scaffold: React.FC<ScaffoldProps> = ({ children }) => {
+  const { systemMode } = useSystemMode();
   return (
     <View style={styles.container}>
       <Gap
         height={screenSizeUtil.getStatusBarHeight}
         backgroundColor={
-          themeSystemMode.getSystemMode() == themeSystemMode.light
+          systemMode == themeSystemMode.light
             ? assetColors.lightMode
             : assetColors.darkMode
         }

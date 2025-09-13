@@ -1,5 +1,3 @@
-import { themeSystemMode } from '@app/themes';
-
 export const assetColors = {
   white: '#FFFFFF',
   black: '#000000',
@@ -13,9 +11,4 @@ export const assetColors = {
   purple: '#9C27B0',
   lightMode: '#FFFFFF',
   darkMode: '#121212',
-  get systemMode() {
-    return themeSystemMode.getSystemMode() === themeSystemMode.light
-      ? this.lightMode
-      : this.darkMode;
-  },
 };
