@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import { AppBar, Scaffold, StatusController } from '@app/components/organisms';
 import { useSelector } from 'react-redux';
 import { RootState } from '@app/store/store';
@@ -10,7 +10,9 @@ import { assetColors } from '@app/assets';
 import { themePadding, themeSystemMode } from '@app/themes';
 import { useSystemMode } from '@core/hooks';
 
-const DemoFeatureScreen = () => {
+type DemoFeatureScreenProps = {};
+
+export const DemoFeatureScreen: React.FC<DemoFeatureScreenProps> = memo(() => {
   const demoFeatureState = useSelector(
     (state: RootState) => state.demo.demoFeatureState,
   );
@@ -65,9 +67,7 @@ const DemoFeatureScreen = () => {
       </View>
     </Scaffold>
   );
-};
-
-export default DemoFeatureScreen;
+});
 
 const styles = StyleSheet.create({
   container: {

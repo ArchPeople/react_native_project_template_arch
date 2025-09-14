@@ -7,21 +7,30 @@ import { themeSystemMode } from '@app/themes';
 import { useSystemMode } from '@core/hooks';
 
 type ScaffoldProps = {
+  ignoreAppBarHeight?: boolean;
   children: ReactNode;
 };
 
-export const Scaffold: React.FC<ScaffoldProps> = ({ children }) => {
+export const Scaffold: React.FC<ScaffoldProps> = ({
+  ignoreAppBarHeight = false,
+  children,
+}) => {
   const { systemMode } = useSystemMode();
   return (
     <View style={styles.container}>
-      <Gap
-        height={screenSizeUtil.getStatusBarHeight}
-        backgroundColor={
-          systemMode == themeSystemMode.light
-            ? assetColors.lightMode
-            : assetColors.darkMode
-        }
-      />
+      {ignoreAppBarHeight ? (
+        <View />
+      ) : (
+        <Gap
+          height={screenSizeUtil.getStatusBarHeight}
+          backgroundColor={
+            systemMode == themeSystemMode.light
+              ? assetColors.lightMode
+              : assetColors.darkMode
+          }
+        />
+      )}
+
       {children}
     </View>
   );
