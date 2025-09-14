@@ -1,5 +1,5 @@
 import React from 'react';
-import DemoFeatureScreen from './screen/DemoFeatureScreen';
+import { DemoFeatureScreen } from './screen/DemoFeatureScreen';
 
 export const DemoFeatureView = () => {
   return <DemoFeatureScreen />;

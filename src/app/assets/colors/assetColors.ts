@@ -9,6 +9,10 @@ export const assetColors = {
   yellow: '#FFEB3B',
   orange: '#FF9800',
   purple: '#9C27B0',
+  lightYellow: '#FFD85A',
+  lightRed: '#FF7D7D',
   lightMode: '#FFFFFF',
+  maroonRed: '#2F0018',
+  darkPurple: '#300F45',
   darkMode: '#121212',
 };

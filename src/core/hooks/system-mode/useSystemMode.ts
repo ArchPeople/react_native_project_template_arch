@@ -10,10 +10,12 @@ type SystemMode = String;
 
 interface SystemModeState {
   systemMode: SystemMode;
+  changedManually: boolean;
 }
 
 const initialState: SystemModeState = {
   systemMode: themeSystemMode.light,
+  changedManually: false,
 };
 
 export const systemModeSlice = createSlice({
@@ -22,6 +24,7 @@ export const systemModeSlice = createSlice({
   reducers: {
     setSystemMode: (state, action: PayloadAction<SystemMode>) => {
       state.systemMode = action.payload;
+      state.changedManually = true;
     },
     toggleSystemMode: state => {
       state.systemMode =
@@ -36,19 +39,24 @@ export const { setSystemMode, toggleSystemMode } = systemModeSlice.actions;
 export default systemModeSlice.reducer;
 
 export const useSystemMode = () => {
-  const systemScheme = useColorScheme(); // detect system theme
+  const systemScheme = useColorScheme();
   const dispatch = useAppDispatch();
   const systemMode = useSelector(
     (state: RootState) => state.systemMode.systemMode,
   );
+  const changedManually = useSelector(
+    (state: RootState) => state.systemMode.changedManually,
+  );
 
   useEffect(() => {
-    changeMode(
-      systemScheme === 'dark' ? themeSystemMode.dark : themeSystemMode.light,
-    );
+    if (!changedManually) {
+      setMode(
+        systemScheme === 'light' ? themeSystemMode.light : themeSystemMode.dark,
+      );
+    }
   }, [systemScheme]);
 
-  const changeMode = (newMode: SystemMode) => {
+  const setMode = (newMode: SystemMode) => {
     dispatch(setSystemMode(newMode));
   };
 
@@ -56,5 +64,5 @@ export const useSystemMode = () => {
     dispatch(toggleSystemMode());
   };
 
-  return { systemMode, changeMode, switchMode };
+  return { systemMode, setMode, switchMode };
 };
