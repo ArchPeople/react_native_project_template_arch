@@ -9,7 +9,9 @@
     "start": "react-native start",
     "test": "jest",
     "clean": "rm -rf $TMPDIR/metro-cache $TMPDIR/react-* android/build ios/build android/.gradle android/app/build ios/Pods ios/Podfile.lock && yarn install && cd android && ./gradlew clean && cd .. && cd ios && pod install --repo-update && cd ..",
-    "generate:env": "chmod +x generator/generate-env.sh && ./generator/generate-env.sh"
+    "generate:env-linux": "chmod +x generator/generate-env.sh && ./generator/generate-env.sh",
+    "generate:env-mac": "chmod +x generator/generate-env.sh && ./generator/generate-env.sh",
+    "generate:env-windows": "powershell -ExecutionPolicy Bypass -File ./generator/generate-env.ps1"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.2.0",
@@ -36,14 +38,14 @@
     "@react-native/metro-config": "0.81.4",
     "@react-native/typescript-config": "0.81.4",
     "@types/jest": "^30.0.0",
-    "@types/react": "^19.1.12",
+    "@types/react": "^19.2.0",
     "@types/react-test-renderer": "^19.1.0",
     "babel-plugin-module-resolver": "^5.0.2",
-    "eslint": "^9.36.0",
-    "jest": "^30.1.3",
+    "eslint": "^9.37.0",
+    "jest": "^30.2.0",
     "prettier": "3.6.2",
     "react-test-renderer": "19.1.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=20"

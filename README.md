@@ -113,9 +113,36 @@ OTHER_KEY_2=othervalue2
 
 And generate the env for the config with:
 
+Linux:
+
 ```bash
-yarn run generate:env
+yarn run generate:env-linux
 ```
+
+Mac:
+
+```bash
+yarn run generate:env-mac
+```
+
+Windows:
+
+```bash
+yarn run generate:env-windows
+```
+
+If somehow you cannot run the script, you'll have to manually create an env.ts file in this path src/core/config/ and write your environment values in camel case:
+
+```javascript
+export const env = {
+  demo: 'demo',
+  otherKey1: 'otherValue1',
+  otherKey2: 'otherValue2',
+};
+```
+
+> [!NOTE]
+> The generated or manually created env.ts file will be ignored so it will not be pushed to the project repo
 
 To run the app, do:
 
@@ -125,4 +152,4 @@ yarn run ios
 ```
 
 > [!IMPORTANT]
-> Once you are ready to build the app, don't forget to delete the .env file after you've generated the config. Else, your .env file's contents will be shown if the app is being decompiled
+> Once you are ready to build the app, if you're using generated environment don't forget to delete the .env file after you've generated the config. Else, your .env file's contents will be shown if the app is being decompiled
