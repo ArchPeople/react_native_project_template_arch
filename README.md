@@ -14,7 +14,7 @@ Or download via [releases](https://github.com/michmadheo/react_native_project_te
 
 Essentials To ease your project setup. Here you can find:
 
-- ✅ React Native 0.83.0, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
+- ✅ React Native 0.83.1, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
 - ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
 - ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
 - ✅ Easy to use [redux-toolkit](https://www.npmjs.com/package/@reduxjs/toolkit) design pattern (see [demo-feature](src/features/demo-feature) for example)
@@ -103,13 +103,13 @@ Go to info.plist and change the value of CFBundleDisplayName and CFBundleName to
 Create a .env file in root project with this example content:
 
 ```bash
-Demo=demo
+DEMO=demo
 OTHER_KEY_1=othervalue1
 OTHER_KEY_2=othervalue2
 ```
 
 > [!WARNING]
-> Please include the 'Demo=demo' if this is the first time you use this template. You can change it later on config
+> Please include the 'DEMO=demo' if this is the first time you use this template. You can change it later on config
 
 And generate the env for the config with:
 
@@ -130,6 +130,9 @@ Windows:
 ```bash
 yarn run generate:env-windows
 ```
+
+> [!NOTE]
+> The key in the .env file will be changed into camel case format, for example: DEMO to demo, or OTHER_KEY_1 to otherKey1
 
 If somehow you cannot run the script, you'll have to manually create an env.ts file in this path src/core/config/ and write your environment values in camel case:
 
