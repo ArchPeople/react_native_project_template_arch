@@ -14,7 +14,7 @@ Or download via [releases](https://github.com/michmadheo/react_native_project_te
 
 Essentials To ease your project setup. Here you can find:
 
-- ✅ React Native 0.84.1, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
+- ✅ React Native 0.85.1, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
 - ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
 - ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
 - ✅ Easy to use [redux-toolkit](https://www.npmjs.com/package/@reduxjs/toolkit) design pattern (see [demo-feature](src/features/demo-feature) for example)
@@ -34,7 +34,7 @@ Check the [package.json](package.json) for packages versions.
 These are the requirements to run this template:
 
 - Java minimum version 17
-- Node version >= 22.11.0
+- Node version >= 24.3.0
 - yarn version 1.22.22
 - Android Studio minimum version Meerkat 2024.3.1
 - Xcode up minimum version 16.4
