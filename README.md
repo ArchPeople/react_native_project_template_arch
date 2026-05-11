@@ -15,6 +15,7 @@ Or download via [releases](https://github.com/michmadheo/react_native_project_te
 Essentials To ease your project setup. Here you can find:
 
 - ✅ React Native 0.85.1, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
+- ✅ Consistent template for new feature with [plop.js](https://www.npmjs.com/package/plop)
 - ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
 - ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
 - ✅ Easy to use [redux-toolkit](https://www.npmjs.com/package/@reduxjs/toolkit) design pattern (see [demo-feature](src/features/demo-feature) for example)
@@ -156,3 +157,7 @@ yarn run ios
 
 > [!IMPORTANT]
 > Once you are ready to build the app, if you're using generated environment don't forget to delete the .env file after you've generated the config. Else, your .env file's contents will be shown if the app is being decompiled
+
+## Making a new feature 💧
+
+See [PLOP-GUIDE.md](PLOP-GUIDE.md) for guidance. Once you use plop, you'll never go manual ever again.

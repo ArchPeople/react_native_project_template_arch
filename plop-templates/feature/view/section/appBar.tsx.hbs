@@ -1,0 +1,8 @@
+import React, { memo } from 'react';
+import { AppBar } from '@app/components/organisms';
+
+type AppBarSectionProps = {};
+
+export const AppBarSection: React.FC<AppBarSectionProps> = memo(() => {
+  return <AppBar title="{{titleCase name}}" />;
+});

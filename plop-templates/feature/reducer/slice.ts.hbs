@@ -1,0 +1,44 @@
+import { viewState } from '@core/common/view-state/viewState';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { {{camelCase name}}Repository } from '../repository/{{camelCase name}}Repository';
+import { initialState } from './{{camelCase name}}State';
+
+// API functions
+const exampleFetchApi = createAsyncThunk(
+  '{{camelCase name}}/exampleFetchApi',
+  async () => {
+    const response = await {{camelCase name}}Repository.getDemoData();
+    return response;
+  },
+);
+
+export const {{camelCase name}}Slice = createSlice({
+  name: '{{camelCase name}}',
+  initialState,
+  reducers: {
+    exampleChangeState: state => {
+      state.{{camelCase name}}State = viewState.success;
+    },
+  },
+  extraReducers: builder => {
+    builder
+      .addCase(exampleFetchApi.pending, state => {
+        state.{{camelCase name}}State = viewState.loading;
+      })
+      .addCase(exampleFetchApi.fulfilled, (state, action) => {
+        if ('errorMessage' in action.payload) {
+          state.{{camelCase name}}State = viewState.error;
+        } else {
+          state.{{camelCase name}}State = viewState.success;
+        }
+      })
+      .addCase(exampleFetchApi.rejected, state => {
+        state.{{camelCase name}}State = viewState.error;
+      });
+  },
+});
+
+export const { exampleChangeState } = {{camelCase name}}Slice.actions;
+export { exampleFetchApi };
+
+export default {{camelCase name}}Slice.reducer;
