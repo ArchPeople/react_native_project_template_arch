@@ -1,0 +1,11 @@
+import { viewState } from '@core/common/view-state/viewState';
+
+interface I{{pascalCase name}}State {
+  {{camelCase name}}State: string;
+}
+
+const initialState: I{{pascalCase name}}State = {
+  {{camelCase name}}State: viewState.initial,
+};
+
+export { initialState };

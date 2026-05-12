@@ -1,0 +1,13 @@
+import { View } from 'react-native';
+import React, { memo } from 'react';
+import { SampleWidget } from '../component/SampleComponent';
+
+type BodySectionProps = {};
+
+export const BodySection: React.FC<BodySectionProps> = memo(() => {
+  return (
+    <View>
+      <SampleWidget />
+    </View>
+  );
+});

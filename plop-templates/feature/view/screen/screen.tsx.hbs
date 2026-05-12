@@ -1,0 +1,26 @@
+import { ScrollView } from 'react-native';
+import React, { memo, useEffect } from 'react';
+import { Scaffold } from '@app/components/organisms';
+import { useSelector } from 'react-redux';
+import { RootState } from '@app/store/store';
+import { AppBarSection } from '../section/AppBarSection';
+import { BodySection } from '../section/BodySection';
+
+type {{pascalCase name}}ScreenProps = {};
+
+export const {{pascalCase name}}Screen: React.FC<{{pascalCase name}}ScreenProps> = memo(() => {
+  const {{camelCase name}}State = useSelector(
+    (state: RootState) => state.{{camelCase name}}.{{camelCase name}}State,
+  );
+
+  useEffect(() => {}, [{{camelCase name}}State]);
+
+  return (
+    <Scaffold>
+      <ScrollView>
+        <AppBarSection />
+        <BodySection />
+      </ScrollView>
+    </Scaffold>
+  );
+});
