@@ -112,7 +112,7 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
         </View>
         <Gap height={ds(20)} />
         <TextBase style={[themeFonts.bodyXsLight, { textAlign: 'center' }]}>
-          ver 1.6.0
+          ver 1.7.0
         </TextBase>
         <Gap height={ds(screenSizeUtil.getBottomBarHeight) + ds(20)} />
       </GradientView>

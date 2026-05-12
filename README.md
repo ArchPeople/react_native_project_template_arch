@@ -15,6 +15,7 @@ Or download via [releases](https://github.com/michmadheo/react_native_project_te
 Essentials To ease your project setup. Here you can find:
 
 - ✅ React Native 0.85.3, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
+- ✅ Ready to use icons from [material icons](https://www.npmjs.com/package/@react-native-vector-icons/material-icons)
 - ✅ Consistent template for new feature with [plop.js](https://www.npmjs.com/package/plop)
 - ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
 - ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
