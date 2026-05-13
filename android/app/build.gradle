@@ -105,6 +105,25 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        development {
+            dimension "default"
+            applicationIdSuffix ".development"
+            resValue "string", "app_name", "Arch RN Dev"
+        }
+        staging {
+            dimension "default"
+            applicationIdSuffix ".staging"
+            resValue "string", "app_name", "Arch RN Staging"
+        }
+        production {
+            dimension "default"
+            resValue "string", "app_name", "Arch RN"
+        }
+    }
 }
 
 dependencies {

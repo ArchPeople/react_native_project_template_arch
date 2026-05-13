@@ -4,7 +4,12 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android:dev": "react-native run-android --mode=developmentDebug --appIdSuffix=development",
+    "android:stg": "react-native run-android --mode=stagingDebug --appIdSuffix=staging",
+    "android:prod": "react-native run-android --mode=productionDebug",
+    "ios:dev": "react-native run-ios --scheme \"development\"",
+    "ios:stg": "react-native run-ios --scheme \"staging\"",
+    "ios:prod": "react-native run-ios --scheme \"production\"",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
