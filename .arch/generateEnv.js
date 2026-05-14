@@ -2,32 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 async function main() {
-  const archIcon = `
-         ____________
-      /                \\
-     /    __________    \\
-    /    /          \\    \\
-   |    |            |    |
-   |    |            |    |
-   |    |            |    |
-   |    |            |    |
-   |    |            |    |
-   |    |            |    |
-   |    |_______     |    |
-   |            |    |    |
-   |____________|    |____|
-`;
-  const archText = `
-     _      ____    ____  _   _ 
-    / \\    |  _ \\  / ___|| | | |
-   / _ \\   | |_) || |    | |_| |
-  / ___ \\  |  _ < | |___ |  _  |
- /_/   \\_\\ |_| \\_\\ \\____||_| |_|
-`;
-
-  console.log(archIcon);
-  console.log(archText);
-  await new Promise(resolve => setTimeout(resolve, 1000));
   // 1. Setup Paths
   const rootDir = path.join(__dirname, '..');
   const outFile = path.join(rootDir, 'src/core/config/env.ts');
