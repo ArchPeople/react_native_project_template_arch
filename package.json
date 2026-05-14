@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "arch:init": "node .arch/init.js",
-    "arch:change-package-name": "node .arch/packageName.js",
-    "arch:generate-env": "node .arch/generateEnv.js",
+    "arch:init": "node arch/init.js",
+    "arch:change-package-name": "node arch/packageName.js",
+    "arch:generate-env": "node arch/generateEnv.js",
     "android": "react-native run-android",
     "android:dev": "react-native run-android --mode=developmentDebug --appIdSuffix=development",
     "android:stg": "react-native run-android --mode=stagingDebug --appIdSuffix=staging",
