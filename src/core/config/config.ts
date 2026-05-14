@@ -4,5 +4,5 @@ export const config = {
   demoDomain: 'https://reactnative.dev',
 
   // Environment (Add more if you add more keys in your .env file)
-  demo: env.demo,
+  flavor: env.flavor,
 };

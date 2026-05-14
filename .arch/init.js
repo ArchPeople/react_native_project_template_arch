@@ -116,13 +116,18 @@ async function main() {
     `ios/${repositoryName}.xcodeproj`,
   );
 
+  /// 4. Add .env file
+  fs.writeFileSync('.env', 'FLAVOR=development\n');
+
   console.log('\n✅ We are almost complete!');
   console.log('We need your help to manually replace');
   console.log('\nSearch for this:', oldPackageName);
   console.log('and replace to:', packageName);
   console.log('\nSearch for this:', oldPackageName.slice(4));
   console.log('and replace to:', repositoryName);
-  console.log('\nDo yarn run clean, then you can run your app!');
+  console.log(
+    '\nDo yarn run clean and yarn run arch:generate-env, then you can run your app!',
+  );
 
   rl.close();
 }
