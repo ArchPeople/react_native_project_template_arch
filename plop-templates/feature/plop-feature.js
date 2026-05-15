@@ -67,26 +67,26 @@ module.exports = function (plop) {
       {
         type: 'append',
         path: '../../src/app/store/store.ts',
-        pattern: /    \/\/ @plop-reducer-anchor/g,
+        pattern: /    \/\/ @plop-reducer-anchor <-- Do not remove/g,
         template: '    {{camelCase name}}: {{camelCase name}}Reducer,',
       },
       {
         type: 'append',
         path: '../../src/app/navigation/navigator.ts',
-        pattern: /\/\/ @plop-navigation-import-anchor/g,
+        pattern: /\/\/ @plop-navigation-import-anchor <-- Do not remove/g,
         template:
           "import { {{pascalCase name}}View } from '@features/{{kebabCase name}}';",
       },
       {
         type: 'append',
         path: '../../src/app/navigation/navigator.ts',
-        pattern: /  \/\/ @plop-navigation-param-anchor/g,
+        pattern: /  \/\/ @plop-navigation-param-anchor <-- Do not remove/g,
         template: '  {{pascalCase name}}: undefined,',
       },
       {
         type: 'append',
         path: '../../src/app/navigation/navigator.ts',
-        pattern: /    \/\/ @plop-navigation-screen-anchor/g,
+        pattern: /    \/\/ @plop-navigation-screen-anchor <-- Do not remove/g,
         template:
           '    {{pascalCase name}}: {\n      screen: {{pascalCase name}}View,\n    },',
       },
