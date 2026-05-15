@@ -40,7 +40,7 @@ These are the requirements to run this template:
 Essentials To ease your project setup. Here you can find:
 
 - ✅ React Native 0.85.3, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
-- ✅ Tasty multi flavor for development, staging & production environment (see [RUN-APP.md](guide/how-to-run.md) for guidance)
+- ✅ Tasty ready-to-use flavors, configured for development, staging & production environment (See [how to run](guide/how-to-run.md) guide)
 - ✅ Ready to use icons from [material icons](https://www.npmjs.com/package/@react-native-vector-icons/material-icons)
 - ✅ Consistent template for new feature with [plop.js](https://www.npmjs.com/package/plop)
 - ✅ Hello! Bonjour! localization support with [i18Next](https://github.com/i18next/i18next)
