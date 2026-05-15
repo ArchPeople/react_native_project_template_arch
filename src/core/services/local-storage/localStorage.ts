@@ -1,29 +1,35 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createAsyncStorage } from '@react-native-async-storage/async-storage';
+
+const storage = createAsyncStorage('app-storage');
 
 export const localStorage = {
   setValue: async (key: string, value: string) => {
     try {
-      await AsyncStorage.setItem(key, value);
-    } catch (e) {}
+      await storage.setItem(key, value);
+    } catch (e) {
+      console.error('Storage Set Error:', e);
+    }
   },
   getValue: async (key: string) => {
     try {
-      const value = await AsyncStorage.getItem(key);
-      if (value != null) {
-        return value;
-      }
+      return await storage.getItem(key);
     } catch (e) {
+      console.error('Storage Get Error:', e);
       return null;
     }
   },
   deleteValue: async (key: string) => {
     try {
-      await AsyncStorage.removeItem('@MyApp_key');
-    } catch (e) {}
+      await storage.removeItem(key);
+    } catch (e) {
+      console.error('Storage Delete Error:', e);
+    }
   },
   clearAllValue: async () => {
     try {
-      await AsyncStorage.clear();
-    } catch (e) {}
+      await storage.clear();
+    } catch (e) {
+      console.error('Storage Clear Error:', e);
+    }
   },
 };

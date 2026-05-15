@@ -2,5 +2,16 @@ pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
 plugins { id("com.facebook.react.settings") }
 extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
 rootProject.name = 'react_native_project_template_arch'
+dependencyResolutionManagement {
+   repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+   repositories {
+      google()
+      mavenCentral()
+
+      maven { url = uri("https://jitpack.io") }
+
+      maven { url = uri("../node_modules/@react-native-async-storage/async-storage/android/local_repo") }
+   }
+}
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
