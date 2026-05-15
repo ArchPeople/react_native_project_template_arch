@@ -1,35 +1,26 @@
-# React Native Project Template - "Arch"
+<img src="./assets/images/arch-promo.webp" alt="arch react native" width="100%">
 
-> A Template to start React Native app development with minimal effort. Introducing the "Arch".
+<div align="center">
+  <h1 align="center">Arch</h1>
+  <h3 align="center">A React Native Project Template</h3>
+  <h6 align="center">Easy to learn, Battery Included</h3>
+</div>
+
+<div align="center">
+  <a href="https://ko-fi.com/michmadheo" target="_blank">
+    <img src="./assets/images/support-me.png" alt="Support me on Ko-fi"  width="200"/>
+  </a>
+</div>
 
 ## Quick Start 🎮
+
+In your new project folder:
 
 ```bash
 git clone https://github.com/michmadheo/react_native_project_template_arch.git
 ```
 
 Or download via [releases](https://github.com/michmadheo/react_native_project_template_arch/releases).
-
-## What's included 🚀
-
-Essentials To ease your project setup. Here you can find:
-
-- ✅ React Native 0.85.3, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
-- ✅ Ready to use icons from [material icons](https://www.npmjs.com/package/@react-native-vector-icons/material-icons)
-- ✅ Consistent template for new feature with [plop.js](https://www.npmjs.com/package/plop)
-- ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
-- ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
-- ✅ Easy to use [redux-toolkit](https://www.npmjs.com/package/@reduxjs/toolkit) design pattern (see [demo-feature](src/features/demo-feature) for example)
-- ✅ Simple & reliable local data source storage with [react-native-async-storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage)
-- ✅ Assortment of ready-to-use themes for styling (see [themes](src/app/themes) for example)
-- ✅ Helpful utilities and extensions (see [general-helpers](src/core/general-helpers) for example)
-- ✅ Structured atomic design pattern for components (see [components](src/app/components) for example)
-- ✅ Everyone's favorite dark mode, is supported (see [useSystemMode](src/core/hooks/system-mode/useSystemMode.ts) hooks for usage)
-
-Check the [package.json](package.json) for packages versions.
-
-> [!TIP]
-> Didn't like what's included? want to swap packages? feel free to do it!
 
 ## Requirements 🛠️
 
@@ -44,121 +35,54 @@ These are the requirements to run this template:
 > [!NOTE]
 > Requirements doesn't match your setup? find another template version in [releases](https://github.com/michmadheo/react_native_project_template_arch/releases).
 
-## Change package name 1/3 (Android) 📦
+## What's included 🚀
 
-- Search for "com.react_native_project_template_arch" and replace it with your package (Ex: com.awesome.app)
+Essentials To ease your project setup. Here you can find:
 
-- Change the path of android/app/src/main/java/com/com.react_native_project_template_arch to your package name (Ex: android/app/src/main/java/com/com.awesome.app)
+- ✅ React Native 0.85.3, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
+- ✅ Tasty ready-to-use flavors, configured for development, staging & production environment (See [how to run](guide/how-to-run.md) guide)
+- ✅ Ready to use icons from [material icons](https://www.npmjs.com/package/@react-native-vector-icons/material-icons)
+- ✅ Consistent template for new feature with [plop.js](https://www.npmjs.com/package/plop)
+- ✅ Hello! Bonjour! localization support with [i18Next](https://github.com/i18next/i18next)
+- ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
+- ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
+- ✅ Easy to use [redux-toolkit](https://www.npmjs.com/package/@reduxjs/toolkit) design pattern (see [demo-feature](src/features/demo-feature) for example)
+- ✅ Simple & reliable local data source storage with [react-native-async-storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage)
+- ✅ Assortment of ready-to-use themes for styling (see [themes](src/app/themes) for example)
+- ✅ Helpful utilities and extensions (see [general-helpers](src/core/general-helpers) for example)
+- ✅ Structured atomic design pattern for components (see [components](src/app/components) for example)
+- ✅ Everyone's favorite dark mode, is supported (see [useSystemMode](src/core/hooks/system-mode/useSystemMode.ts) hooks for usage)
 
-## Change package name 2/3 (iOS) 📦
+Check the [package.json](package.json) for packages versions.
 
-- Open xcode and change the bundle identifer to your package (Ex: com.awesome.app)
+> [!TIP]
+> Didn't like what's included? want to swap packages? feel free to do it!
 
-## Change package name 3/3 (Repo name) 📦
+## Get Started 📦
 
-- In ios folder, look at these files:
-
-```bash
-react_native_project_template_arch
-```
-
-```bash
-react_native_project_template_arch.xcodeproj
-```
-
-```bash
-react_native_project_template_arch.xcworkspace
-```
-
-```bash
-react_native_project_template_arch.xcodeproj/xcshareddata/xcschemes/react_native_project_template_arch.xcscheme
-```
-
-- Rename each folder name or xc files above with your repository name
-
-- Search for react_native_project_template_arch and replace it with your github repository name
-
-- Clean the app by running:
+After cloning or downloading the project to your project folder, please run:
 
 ```bash
-yarn run clean
+yarn run arch:init
 ```
 
-## Change app name (First time change) 📲
+Follow the prompts and instructions, then everything is ready 🚀
 
-Search for "Arch RN App" and rename it with your app name
-
-## Manual Change app name (Android) 📲
-
-Go to strings.xml and change the value to your app name
-
-## Manual Change app name (iOS) 📲
-
-Go to info.plist and change the value of CFBundleDisplayName and CFBundleName to your app name
-
-## Change app icon (Android) ✨
-
-- Check out this [Youtube video](https://www.youtube.com/watch?v=FRCWWvlTubQ) on how to change both icons for Android and iOS
-
-## Run the app 🎉
-
-Create a .env file in root project with this example content:
+Run the app:
 
 ```bash
-DEMO=demo
-OTHER_KEY_1=othervalue1
-OTHER_KEY_2=othervalue2
+yarn run android:dev
 ```
 
-> [!WARNING]
-> Please include the 'DEMO=demo' if this is the first time you use this template. You can change it later on config
-
-And generate the env for the config with:
-
-Linux:
+or
 
 ```bash
-yarn run generate:env-linux
+yarn run ios:dev
 ```
 
-Mac:
+## Guidance library 📚
 
-```bash
-yarn run generate:env-mac
-```
-
-Windows:
-
-```bash
-yarn run generate:env-windows
-```
-
-> [!NOTE]
-> The key in the .env file will be changed into camel case format, for example: DEMO to demo, or OTHER_KEY_1 to otherKey1
-
-If somehow you cannot run the script, you'll have to manually create an env.ts file in this path src/core/config/ and write your environment values in camel case:
-
-```javascript
-export const env = {
-  demo: 'demo',
-  otherKey1: 'otherValue1',
-  otherKey2: 'otherValue2',
-};
-```
-
-> [!NOTE]
-> The generated or manually created env.ts file will be ignored so it will not be pushed to the project repo
-
-To run the app, do:
-
-```bash
-yarn run android
-yarn run ios
-```
+For more guidance, please check the [guide](guide) folder
 
 > [!IMPORTANT]
 > Once you are ready to build the app, if you're using generated environment don't forget to delete the .env file after you've generated the config. Else, your .env file's contents will be shown if the app is being decompiled
-
-## Making a new feature 💧
-
-See [PLOP-GUIDE.md](PLOP-GUIDE.md) for guidance. Once you use plop, you'll never go manual ever again.

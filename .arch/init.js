@@ -70,6 +70,9 @@ async function main() {
   const packageName = await ask('What is the package name? ');
   const repositoryName = await ask('What is the repository name? ');
 
+  /// Add .env file
+  fs.writeFileSync('.env', 'FLAVOR=development\n');
+
   /// 1. Update android package and app name
   const gradlePath = 'android/app/build.gradle';
 
@@ -119,9 +122,6 @@ async function main() {
     `ios/${oldPackageName.slice(4)}.xcodeproj`,
     `ios/${repositoryName}.xcodeproj`,
   );
-
-  /// 4. Add .env file
-  fs.writeFileSync('.env', 'FLAVOR=development\n');
 
   console.log('\n✅ We are almost complete!');
   console.log('We need your help to manually replace');
