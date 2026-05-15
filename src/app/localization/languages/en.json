@@ -1,0 +1,6 @@
+{
+  "welcomeMessage": "Welcome to {{name}}",
+  "introductionMessage": "Check the demo feature showcase by clicking the button below.",
+  "lightMode": "Light Mode",
+  "darkMode": "Dark Mode"
+}

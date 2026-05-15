@@ -17,10 +17,11 @@ import {
 } from '@app/themes';
 import { useSystemMode } from '@core/hooks';
 import { assetColors, assetImages } from '@app/assets';
-import { screenSizeUtil } from '@core/general-helpers/utils/screen-size/screnSizeUtil';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '@app/navigation/navigator';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useTranslation } from 'react-i18next';
+import { localizationUtil, screenSizeUtil } from '@core/general-helpers/utils';
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Demo'>;
 
@@ -30,6 +31,7 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
   memo(() => {
     const { systemMode, setMode } = useSystemMode();
     const navigation = useNavigation<NavigationProp>();
+    const { t } = useTranslation();
 
     return (
       <GradientView
@@ -56,10 +58,12 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
             style={{ height: ds(80), resizeMode: 'contain' }}
           />
           <Gap height={ds(80)} />
-          <TextBase style={themeFonts.h4ExtraBold}>Welcome to Arch</TextBase>
+          <TextBase style={themeFonts.h4ExtraBold}>
+            {t('welcomeMessage', { name: 'Arch' })}
+          </TextBase>
           <Gap height={ds(20)} />
           <TextBase style={[themeFonts.bodySmLight, { textAlign: 'center' }]}>
-            Check the demo feature showcase by clicking the button below.
+            {t('introductionMessage')}
           </TextBase>
           <Gap height={ds(40)} />
           <ButtonBase
@@ -70,6 +74,23 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
             }}
           />
           <Spacer />
+          <View style={[{ flexDirection: 'row', gap: ds(20) }]}>
+            <PressableBase
+              onPress={() => {
+                localizationUtil.changeLanguage('en');
+              }}
+            >
+              <TextBase style={[themeFonts.bodyLgRegular]}>🇬🇧</TextBase>
+            </PressableBase>
+            <PressableBase
+              onPress={() => {
+                localizationUtil.changeLanguage('fr');
+              }}
+            >
+              <TextBase style={[themeFonts.bodyLgRegular]}>🇫🇷</TextBase>
+            </PressableBase>
+          </View>
+          <Gap height={ds(20)} />
           <View
             style={{
               flexDirection: 'row',
@@ -89,7 +110,7 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
                     : themeFonts.bodyXsLight
                 }
               >
-                Light Mode
+                {t('lightMode')}
               </TextBase>
             </PressableBase>
             <TextBase> | </TextBase>
@@ -105,7 +126,7 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
                     : themeFonts.bodyXsLight
                 }
               >
-                Dark Mode
+                {t('darkMode')}
               </TextBase>
             </PressableBase>
           </View>

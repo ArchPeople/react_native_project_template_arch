@@ -1,5 +1,5 @@
 import { themeDeviceDimension } from '@app/themes';
-import { screenSizeUtil } from '@core/general-helpers/utils/screen-size/screnSizeUtil';
+import { screenSizeUtil } from '@core/general-helpers/utils';
 
 export const ds = (val: number) => {
   let width: number = screenSizeUtil.getScreenWidth;
