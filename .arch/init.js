@@ -66,9 +66,9 @@ async function main() {
 
   console.log(archIcon);
   await new Promise(resolve => setTimeout(resolve, 1000));
-  const appName = await ask('\nWhat is your app name? ');
-  const packageName = await ask('What is your package name? ');
-  const repositoryName = await ask('What is your repository name? ');
+  const appName = await ask('\nWhat is the app name? ');
+  const packageName = await ask('What is the package name? ');
+  const repositoryName = await ask('What is the repository name? ');
 
   /// 1. Update android package and app name
   const gradlePath = 'android/app/build.gradle';
@@ -129,9 +129,9 @@ async function main() {
   console.log('and replace to:', packageName);
   console.log('\nSearch for this:', oldPackageName.slice(4));
   console.log('and replace to:', repositoryName);
-  console.log(
-    '\nDo yarn run clean and yarn run arch:generate-env, then you can run your app!',
-  );
+  console.log('\nPlease run this manually before running:');
+  console.log('yarn run clean && yarn run arch:generate-env');
+  console.log('\nYour app is now ready 🚀, Happy coding ~');
 
   rl.close();
 }
