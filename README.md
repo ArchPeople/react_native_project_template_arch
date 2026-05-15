@@ -80,6 +80,9 @@ or
 yarn run ios:dev
 ```
 
+> [!IMPORTANT]
+> Make sure that .env file exist in root project, for more info please read [how to run](guide/how-to-run.md) guide
+
 ## Guidance library 📚
 
 For more guidance, please check the [guide](guide) folder
