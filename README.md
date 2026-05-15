@@ -8,7 +8,7 @@
 
 <div align="center">
   <a href="https://ko-fi.com/michmadheo" target="_blank">
-    <img src="./assets/images/support-me.png" alt="Support me on Ko-fi" />
+    <img src="./assets/images/support-me.png" alt="Support me on Ko-fi"  width="200"/>
   </a>
 </div>
 
