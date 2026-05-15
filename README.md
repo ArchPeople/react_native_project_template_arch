@@ -6,6 +6,12 @@
   <h6 align="center">Easy to learn, Battery Included</h3>
 </div>
 
+<div align="center">
+  <a href="https://ko-fi.com/michmadheo" target="_blank">
+    <img src="./assets/images/support-me.png" alt="Support me on Ko-fi" />
+  </a>
+</div>
+
 ## Quick Start 🎮
 
 In your new project folder:
