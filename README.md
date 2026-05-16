@@ -47,7 +47,7 @@ Essentials To ease your project setup. Here you can find:
 - ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
 - ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
 - ✅ Easy to use [redux-toolkit](https://www.npmjs.com/package/@reduxjs/toolkit) design pattern (see [demo-feature](src/features/demo-feature) for example)
-- ✅ Simple & reliable local data source storage with [react-native-async-storage](https://www.npmjs.com/package/@react-native-async-storage/async-storage)
+- ✅ Super fast key-value storage with [react-native-mmkv](https://github.com/mrousavy/react-native-mmkv)
 - ✅ Assortment of ready-to-use themes for styling (see [themes](src/app/themes) for example)
 - ✅ Helpful utilities and extensions (see [general-helpers](src/core/general-helpers) for example)
 - ✅ Structured atomic design pattern for components (see [components](src/app/components) for example)

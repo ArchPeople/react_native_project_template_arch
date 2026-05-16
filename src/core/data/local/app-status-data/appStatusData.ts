@@ -4,18 +4,18 @@ import { storageKey } from '../storageKey';
 const key = storageKey.appStatusStorageKey;
 
 export const appStatusData = {
-  setAppStatusData: async (value: boolean) => {
-    await localStorage.setValue(key, String(value));
+  setAppStatusData: (value: boolean) => {
+    localStorage.setValue(key, String(value));
   },
-  getAppStatusData: async () => {
-    const value = await localStorage.getValue(key);
+  getAppStatusData: () => {
+    const value = localStorage.getValue(key);
     if (value != null) {
       return value === 'true' ? true : false;
     } else {
       return false;
     }
   },
-  deleteAppStatusDaya: async () => {
-    await localStorage.deleteValue(key);
+  deleteAppStatusData: () => {
+    localStorage.deleteValue(key);
   },
 };
