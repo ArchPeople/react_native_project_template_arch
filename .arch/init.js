@@ -76,7 +76,47 @@ async function main() {
   /// 1. Update android package and app name
   const gradlePath = 'android/app/build.gradle';
 
+  const stringsXmlPath = 'android/app/src/main/res/values/strings.xml';
+  const mainActivityPath =
+    'android/app/src/main/java/com/react_native_project_template_arch/MainActivity.kt';
+  const mainApplicationPath =
+    'android/app/src/main/java/com/react_native_project_template_arch/MainApplication.kt';
+  const projectiOSPath =
+    'ios/react_native_project_template_arch.xcodeproj/project.pbxproj';
+  const developmentSchemePath =
+    'ios/react_native_project_template_arch.xcodeproj/xcshareddata/xcschemes/development.xcscheme';
+  const stagingSchemePath =
+    'ios/react_native_project_template_arch.xcodeproj/xcshareddata/xcschemes/staging.xcscheme';
+  const productionSchemePath =
+    'ios/react_native_project_template_arch.xcodeproj/xcshareddata/xcschemes/production.xcscheme';
+
+  const appJsonPath = 'app.json';
+  const packageJsonPath = 'package.json';
+  const settingsGradlePath = 'android/settings.gradle';
+  const podFilePath = 'ios/Podfile';
+  const appDelegatePath =
+    'ios/react_native_project_template_arch/AppDelegate.swift';
+  const launchScreenPath =
+    'ios/react_native_project_template_arch/LaunchScreen.storyboard';
+  const contentsPath =
+    'ios/react_native_project_template_arch.xcworkspace/contents.xcworkspacedata';
+
   let gradleContent = fs.readFileSync(gradlePath, 'utf8');
+  let stringsXmlContent = fs.readFileSync(stringsXmlPath, 'utf8');
+  let mainActivityContent = fs.readFileSync(mainActivityPath, 'utf8');
+  let mainApplicationContent = fs.readFileSync(mainApplicationPath, 'utf8');
+  let projectiOSContent = fs.readFileSync(projectiOSPath, 'utf8');
+  let developmentSchemeContent = fs.readFileSync(developmentSchemePath, 'utf8');
+  let stagingSchemeContent = fs.readFileSync(stagingSchemePath, 'utf8');
+  let productionSchemeContent = fs.readFileSync(productionSchemePath, 'utf8');
+
+  let appJsonContent = fs.readFileSync(appJsonPath, 'utf8');
+  let packageJsonContent = fs.readFileSync(packageJsonPath, 'utf8');
+  let settingsGradleContent = fs.readFileSync(settingsGradlePath, 'utf8');
+  let podFileContent = fs.readFileSync(podFilePath, 'utf8');
+  let appDelegateContent = fs.readFileSync(appDelegatePath, 'utf8');
+  let launchScreenContent = fs.readFileSync(launchScreenPath, 'utf8');
+  let contentsContent = fs.readFileSync(contentsPath, 'utf8');
 
   const namespaceMatch = gradleContent.match(/namespace\s+"([^"]+)"/);
   const productionBlock = gradleContent.match(/production\s*\{[\s\S]*?\}/);
@@ -94,7 +134,71 @@ async function main() {
   gradleContent = gradleContent.replaceAll(oldPackageName, packageName);
   gradleContent = gradleContent.replaceAll(oldAppName, appName);
 
+  stringsXmlContent = stringsXmlContent.replaceAll(oldAppName, appName);
+  mainActivityContent = mainActivityContent
+    .replaceAll(oldPackageName, packageName)
+    .replaceAll(oldPackageName.slice(4), repositoryName);
+  mainApplicationContent = mainApplicationContent.replaceAll(
+    oldPackageName,
+    packageName,
+  );
+  projectiOSContent = projectiOSContent
+    .replaceAll(oldAppName, appName)
+    .replaceAll(oldPackageName, packageName)
+    .replaceAll(oldPackageName.slice(4), repositoryName);
+  developmentSchemeContent = developmentSchemeContent
+    .replaceAll(oldAppName, appName)
+    .replaceAll(oldPackageName.slice(4), repositoryName);
+  stagingSchemeContent = stagingSchemeContent
+    .replaceAll(oldAppName, appName)
+    .replaceAll(oldPackageName.slice(4), repositoryName);
+  productionSchemeContent = productionSchemeContent
+    .replaceAll(oldAppName, appName)
+    .replaceAll(oldPackageName.slice(4), repositoryName);
+  appJsonContent = appJsonContent.replaceAll(
+    oldPackageName.slice(4),
+    repositoryName,
+  );
+  packageJsonContent = packageJsonContent.replaceAll(
+    oldPackageName.slice(4),
+    repositoryName,
+  );
+  settingsGradleContent = settingsGradleContent.replaceAll(
+    oldPackageName.slice(4),
+    repositoryName,
+  );
+  podFileContent = podFileContent.replaceAll(
+    oldPackageName.slice(4),
+    repositoryName,
+  );
+  appDelegateContent = appDelegateContent.replaceAll(
+    oldPackageName.slice(4),
+    repositoryName,
+  );
+  launchScreenContent = launchScreenContent.replaceAll(
+    oldPackageName.slice(4),
+    repositoryName,
+  );
+  contentsContent = contentsContent.replaceAll(
+    oldPackageName.slice(4),
+    repositoryName,
+  );
+
   fs.writeFileSync(gradlePath, gradleContent);
+  fs.writeFileSync(stringsXmlPath, stringsXmlContent);
+  fs.writeFileSync(mainActivityPath, mainActivityContent);
+  fs.writeFileSync(mainApplicationPath, mainApplicationContent);
+  fs.writeFileSync(projectiOSPath, projectiOSContent);
+  fs.writeFileSync(developmentSchemePath, developmentSchemeContent);
+  fs.writeFileSync(stagingSchemePath, stagingSchemeContent);
+  fs.writeFileSync(productionSchemePath, productionSchemeContent);
+  fs.writeFileSync(appJsonPath, appJsonContent);
+  fs.writeFileSync(packageJsonPath, packageJsonContent);
+  fs.writeFileSync(settingsGradlePath, settingsGradleContent);
+  fs.writeFileSync(podFilePath, podFileContent);
+  fs.writeFileSync(appDelegatePath, appDelegateContent);
+  fs.writeFileSync(launchScreenPath, launchScreenContent);
+  fs.writeFileSync(contentsPath, contentsContent);
 
   /// 2. Change Android path
 
@@ -123,12 +227,8 @@ async function main() {
     `ios/${repositoryName}.xcodeproj`,
   );
 
-  console.log('\n✅ We are almost complete!');
-  console.log('We need your help to manually replace');
-  console.log('\nSearch for this:', oldPackageName);
-  console.log('and replace to:', packageName);
-  console.log('\nSearch for this:', oldPackageName.slice(4));
-  console.log('and replace to:', repositoryName);
+  console.log('\n✅ Initialization complete!');
+
   console.log('\nPlease run this manually before running:');
   console.log('yarn run clean && yarn run arch:generate-env');
   console.log('\nYour app is now ready 🚀, Happy coding ~');
