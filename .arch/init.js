@@ -225,8 +225,8 @@ async function main() {
   console.log('\n✅ Initialization complete!');
 
   console.log('\nPlease run this manually before running:');
-  console.log('yarn run clean && yarn run arch:generate-env');
-  console.log('\nYour app is now ready 🚀, Happy coding ~');
+  console.log('\nyarn run clean && yarn run arch:generate-env');
+  console.log('\nYour app is now ready to run 🚀, Happy coding ~');
 
   rl.close();
 }
