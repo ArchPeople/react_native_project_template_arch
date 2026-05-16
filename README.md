@@ -3,12 +3,12 @@
 <div align="center">
   <h1 align="center">Arch</h1>
   <h3 align="center">A React Native Project Template</h3>
-  <h6 align="center">Easy to learn, Battery Included</h3>
+  <h6 align="center">Minimalistic • Scalable</h3>
 </div>
 
 <div align="center">
   <a href="https://ko-fi.com/michmadheo" target="_blank">
-    <img src="./assets/images/support-me.png" alt="Support me on Ko-fi"  width="200"/>
+    <img src="./assets/images/support-me.png" alt="Support me on Ko-fi"  width="150"/>
   </a>
 </div>
 
@@ -89,3 +89,7 @@ For more guidance, please check the [guide](guide) folder
 
 > [!IMPORTANT]
 > Once you are ready to build the app, if you're using generated environment don't forget to delete the .env file after you've generated the config. Else, your .env file's contents will be shown if the app is being decompiled
+
+## License
+
+[MIT](LICENSE)

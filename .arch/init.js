@@ -119,11 +119,15 @@ async function main() {
   let contentsContent = fs.readFileSync(contentsPath, 'utf8');
 
   const namespaceMatch = gradleContent.match(/namespace\s+"([^"]+)"/);
+
   const productionBlock = gradleContent.match(/production\s*\{[\s\S]*?\}/);
   const appNameMatch = productionBlock?.[0].match(/app_name"\s*,\s*"([^"]+)"/);
 
+  const repoNameMatch = packageJsonContent.match(/"name"\s*:\s*"([^"]+)"/);
+
   const oldAppName = appNameMatch?.[1];
   const oldPackageName = namespaceMatch ? namespaceMatch[1] : null;
+  const oldRepoName = repoNameMatch ? repoNameMatch[1] : null;
 
   if (!oldPackageName) {
     console.log('Could not find namespace!');
@@ -137,7 +141,7 @@ async function main() {
   stringsXmlContent = stringsXmlContent.replaceAll(oldAppName, appName);
   mainActivityContent = mainActivityContent
     .replaceAll(oldPackageName, packageName)
-    .replaceAll(oldPackageName.slice(4), repositoryName);
+    .replaceAll(oldRepoName, repositoryName);
   mainApplicationContent = mainApplicationContent.replaceAll(
     oldPackageName,
     packageName,
@@ -145,44 +149,35 @@ async function main() {
   projectiOSContent = projectiOSContent
     .replaceAll(oldAppName, appName)
     .replaceAll(oldPackageName, packageName)
-    .replaceAll(oldPackageName.slice(4), repositoryName);
+    .replaceAll(oldRepoName, repositoryName);
   developmentSchemeContent = developmentSchemeContent
     .replaceAll(oldAppName, appName)
-    .replaceAll(oldPackageName.slice(4), repositoryName);
+    .replaceAll(oldRepoName, repositoryName);
   stagingSchemeContent = stagingSchemeContent
     .replaceAll(oldAppName, appName)
-    .replaceAll(oldPackageName.slice(4), repositoryName);
+    .replaceAll(oldRepoName, repositoryName);
   productionSchemeContent = productionSchemeContent
     .replaceAll(oldAppName, appName)
-    .replaceAll(oldPackageName.slice(4), repositoryName);
-  appJsonContent = appJsonContent.replaceAll(
-    oldPackageName.slice(4),
-    repositoryName,
-  );
+    .replaceAll(oldRepoName, repositoryName);
+  appJsonContent = appJsonContent.replaceAll(oldRepoName, repositoryName);
   packageJsonContent = packageJsonContent.replaceAll(
-    oldPackageName.slice(4),
+    oldRepoName,
     repositoryName,
   );
   settingsGradleContent = settingsGradleContent.replaceAll(
-    oldPackageName.slice(4),
+    oldRepoName,
     repositoryName,
   );
-  podFileContent = podFileContent.replaceAll(
-    oldPackageName.slice(4),
-    repositoryName,
-  );
+  podFileContent = podFileContent.replaceAll(oldRepoName, repositoryName);
   appDelegateContent = appDelegateContent.replaceAll(
-    oldPackageName.slice(4),
+    oldRepoName,
     repositoryName,
   );
   launchScreenContent = launchScreenContent.replaceAll(
-    oldPackageName.slice(4),
+    oldRepoName,
     repositoryName,
   );
-  contentsContent = contentsContent.replaceAll(
-    oldPackageName.slice(4),
-    repositoryName,
-  );
+  contentsContent = contentsContent.replaceAll(oldRepoName, repositoryName);
 
   fs.writeFileSync(gradlePath, gradleContent);
   fs.writeFileSync(stringsXmlPath, stringsXmlContent);
@@ -217,13 +212,13 @@ async function main() {
   });
 
   /// 3. Change iOS path
-  fs.renameSync(`ios/${oldPackageName.slice(4)}`, `ios/${repositoryName}`);
+  fs.renameSync(`ios/${oldRepoName}`, `ios/${repositoryName}`);
   fs.renameSync(
-    `ios/${oldPackageName.slice(4)}.xcworkspace`,
+    `ios/${oldRepoName}.xcworkspace`,
     `ios/${repositoryName}.xcworkspace`,
   );
   fs.renameSync(
-    `ios/${oldPackageName.slice(4)}.xcodeproj`,
+    `ios/${oldRepoName}.xcodeproj`,
     `ios/${repositoryName}.xcodeproj`,
   );
 

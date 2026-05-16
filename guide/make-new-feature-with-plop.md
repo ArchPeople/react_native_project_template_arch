@@ -31,7 +31,7 @@ You can see the example in the [features](src/features/) folder
 
 ## Plop Usage
 
-With Plop, you can generate the structure and all the files in an instant, you don't have to do a copy-paste-rename of your previous feature. We've already prepared the brick (template) for it.
+With Plop, you can generate the structure and all the files in an instant, you don't have to do a copy-paste-rename of your previous feature. We've already prepared the template for it.
 
 To use Plop, type this:
 
