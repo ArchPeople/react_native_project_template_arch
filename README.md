@@ -8,7 +8,7 @@
 
 <div align="center">
   <a href="https://ko-fi.com/michmadheo" target="_blank">
-    <img src="./assets/images/support-me.png" alt="Support me on Ko-fi"  width="150"/>
+    <img src="./assets/images/support-me.png" alt="support me on Ko-fi"  width="150"/>
   </a>
 </div>
 
@@ -65,6 +65,10 @@ After cloning or downloading the project to your project folder, please run:
 ```bash
 yarn run arch:init
 ```
+
+<p align="center">
+  <img src="./assets/images/init.gif" alt="initialization" width="500" />
+</p>
 
 Follow the prompts and instructions, then everything is ready 🚀
 
