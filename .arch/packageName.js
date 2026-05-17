@@ -13,6 +13,28 @@ function ask(question) {
   });
 }
 
+function copyFolderSync(src, dest) {
+  // create destination folder
+  fs.mkdirSync(dest, { recursive: true });
+
+  const entries = fs.readdirSync(src, {
+    withFileTypes: true,
+  });
+
+  for (const entry of entries) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+
+    if (entry.isDirectory()) {
+      // recurse for folders
+      copyFolderSync(srcPath, destPath);
+    } else {
+      // copy file
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
 async function main() {
   const archIcon = `
                 ▒▒▓▓▓▓▓▓▓▓▓▓▓▓▒
@@ -48,10 +70,20 @@ async function main() {
 
   /// 1. Update android package and app name
   const gradlePath = 'android/app/build.gradle';
+  const mainActivityPath =
+    'android/app/src/main/java/com/react_native_project_template_arch/MainActivity.kt';
+  const mainApplicationPath =
+    'android/app/src/main/java/com/react_native_project_template_arch/MainApplication.kt';
+  const projectiOSPath =
+    'ios/react_native_project_template_arch.xcodeproj/project.pbxproj';
 
   let gradleContent = fs.readFileSync(gradlePath, 'utf8');
+  let mainActivityContent = fs.readFileSync(mainActivityPath, 'utf8');
+  let mainApplicationContent = fs.readFileSync(mainApplicationPath, 'utf8');
+  let projectiOSContent = fs.readFileSync(projectiOSPath, 'utf8');
 
   const namespaceMatch = gradleContent.match(/namespace\s+"([^"]+)"/);
+
   const oldPackageName = namespaceMatch ? namespaceMatch[1] : null;
 
   if (!oldPackageName) {
@@ -61,8 +93,20 @@ async function main() {
   }
 
   gradleContent = gradleContent.replaceAll(oldPackageName, packageName);
+  mainActivityContent = mainActivityContent.replaceAll(
+    oldPackageName,
+    packageName,
+  );
+  mainApplicationContent = mainApplicationContent.replaceAll(
+    oldPackageName,
+    packageName,
+  );
+  projectiOSContent = projectiOSContent.replaceAll(oldPackageName, packageName);
 
   fs.writeFileSync(gradlePath, gradleContent);
+  fs.writeFileSync(mainActivityPath, mainActivityContent);
+  fs.writeFileSync(mainApplicationPath, mainApplicationContent);
+  fs.writeFileSync(projectiOSPath, projectiOSContent);
 
   /// 2. Change Android path
 
@@ -79,12 +123,7 @@ async function main() {
     recursive: true,
     force: true,
   });
-
-  console.log('\n✅ We are almost complete!');
-  console.log('We need your help to manually replace');
-  console.log('\nSearch for this:', oldPackageName);
-  console.log('and replace to:', packageName);
-  console.log('\nDo yarn run clean, then you can run your app!');
+  console.log('\n✅ Package name succesfully changed to', packageName);
 
   rl.close();
 }
