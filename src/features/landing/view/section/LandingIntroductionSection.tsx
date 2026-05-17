@@ -59,11 +59,11 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
           />
           <Gap height={ds(80)} />
           <TextBase style={themeFonts.h4ExtraBold}>
-            {t('welcomeMessage', { name: 'Arch' })}
+            {t('welcome_message', { name: 'Arch' })}
           </TextBase>
           <Gap height={ds(20)} />
           <TextBase style={[themeFonts.bodySmLight, { textAlign: 'center' }]}>
-            {t('introductionMessage')}
+            {t('introduction_message')}
           </TextBase>
           <Gap height={ds(40)} />
           <ButtonBase
@@ -110,7 +110,7 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
                     : themeFonts.bodyXsLight
                 }
               >
-                {t('lightMode')}
+                {t('light_mode')}
               </TextBase>
             </PressableBase>
             <TextBase> | </TextBase>
@@ -126,7 +126,7 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
                     : themeFonts.bodyXsLight
                 }
               >
-                {t('darkMode')}
+                {t('dark_mode')}
               </TextBase>
             </PressableBase>
           </View>

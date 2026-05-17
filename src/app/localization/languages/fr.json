@@ -1,6 +1,6 @@
 {
-  "welcomeMessage": "Bienvenue à {{name}}",
-  "introductionMessage": "Découvrez la démonstration des fonctionnalités en cliquant sur le bouton ci-dessous.",
-  "lightMode": "Mode Clair",
-  "darkMode": "Mode Sombre"
+  "welcome_message": "Bienvenue à {{name}}",
+  "introduction_message": "Découvrez la démonstration des fonctionnalités en cliquant sur le bouton ci-dessous.",
+  "light_mode": "Mode Clair",
+  "dark_mode": "Mode Sombre"
 }
