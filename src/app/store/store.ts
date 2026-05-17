@@ -4,9 +4,9 @@ import demoReducer from '@features/demo-feature/reducer/demoSlice';
 
 export const store = configureStore({
   reducer: {
-    systemMode: systemModeReducer, // Reducer for system mode management (Light or Dark)
-    // @plop-reducer-anchor
+    // @plop-reducer-anchor <-- Do not remove
     demo: demoReducer,
+    systemMode: systemModeReducer,
   },
 });
 

@@ -1,3 +1,12 @@
+project 'react_native_project_template_arch', {
+  'Debug-development' => :debug,
+  'Release-development' => :release,
+  'Debug-staging' => :debug,
+  'Release-staging' => :release,
+  'Debug-production' => :debug,
+  'Release-production' => :release,
+}
+
 # Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(

@@ -1,29 +1,38 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createMMKV } from 'react-native-mmkv';
+
+const storage = createMMKV();
 
 export const localStorage = {
-  setValue: async (key: string, value: string) => {
+  setValue: (key: string, value: string) => {
     try {
-      await AsyncStorage.setItem(key, value);
-    } catch (e) {}
-  },
-  getValue: async (key: string) => {
-    try {
-      const value = await AsyncStorage.getItem(key);
-      if (value != null) {
-        return value;
-      }
+      storage.set(key, value);
     } catch (e) {
+      console.error('Storage Set Error:', e);
+    }
+  },
+
+  getValue: (key: string) => {
+    try {
+      return storage.getString(key) ?? null;
+    } catch (e) {
+      console.error('Storage Get Error:', e);
       return null;
     }
   },
-  deleteValue: async (key: string) => {
+
+  deleteValue: (key: string) => {
     try {
-      await AsyncStorage.removeItem('@MyApp_key');
-    } catch (e) {}
+      storage.remove(key);
+    } catch (e) {
+      console.error('Storage Delete Error:', e);
+    }
   },
-  clearAllValue: async () => {
+
+  clearAllValue: () => {
     try {
-      await AsyncStorage.clear();
-    } catch (e) {}
+      storage.clearAll();
+    } catch (e) {
+      console.error('Storage Clear Error:', e);
+    }
   },
 };

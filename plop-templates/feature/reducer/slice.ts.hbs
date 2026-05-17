@@ -2,12 +2,17 @@ import { viewState } from '@core/common/view-state/viewState';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { {{camelCase name}}Repository } from '../repository/{{camelCase name}}Repository';
 import { initialState } from './{{camelCase name}}State';
+import { CancelToken } from 'axios';
+
+interface IExampleFetchApiParams {
+  cancelToken?: CancelToken;
+}
 
 // API functions
 const exampleFetchApi = createAsyncThunk(
   '{{camelCase name}}/exampleFetchApi',
-  async () => {
-    const response = await {{camelCase name}}Repository.getDemoData();
+  async ({ cancelToken }: IExampleFetchApiParams = {}) => {
+    const response = await {{camelCase name}}Repository.getDemoData({ cancelToken });
     return response;
   },
 );

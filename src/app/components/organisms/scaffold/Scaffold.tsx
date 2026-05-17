@@ -2,9 +2,9 @@ import { StyleSheet, View } from 'react-native';
 import React, { ReactNode } from 'react';
 import { assetColors } from '@app/assets';
 import { Gap } from '@app/components/atoms';
-import { screenSizeUtil } from '@core/general-helpers/utils/screen-size/screnSizeUtil';
 import { themeSystemMode } from '@app/themes';
 import { useSystemMode } from '@core/hooks';
+import { screenSizeUtil } from '@core/general-helpers/utils';
 
 type ScaffoldProps = {
   ignoreAppBarHeight?: boolean;

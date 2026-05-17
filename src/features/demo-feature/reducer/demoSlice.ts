@@ -2,12 +2,17 @@ import { viewState } from '@core/common/view-state/viewState';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { demoFeatureRepository } from '../repository/demoFeatureRepository';
 import { initialState } from './demoState';
+import { CancelToken } from 'axios';
+
+interface IDemoSliceApiFunctionParams {
+  cancelToken?: CancelToken;
+}
 
 // API functions
 const demoSliceApiFunction = createAsyncThunk(
   'demo/demoSliceApiFunction',
-  async () => {
-    const response = await demoFeatureRepository.getDemoData();
+  async ({ cancelToken }: IDemoSliceApiFunctionParams = {}) => {
+    const response = await demoFeatureRepository.getDemoData({ cancelToken });
     return response;
   },
 );
