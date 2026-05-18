@@ -17,10 +17,10 @@
 In your new project folder:
 
 ```bash
-git clone https://github.com/michmadheo/react_native_project_template_arch.git
+git clone https://github.com/ArchPeople/react_native_project_template_arch.git
 ```
 
-Or download via [releases](https://github.com/michmadheo/react_native_project_template_arch/releases).
+Or download via [releases](https://github.com/ArchPeople/react_native_project_template_arch/releases).
 
 ## Requirements 🛠️
 
@@ -33,7 +33,7 @@ These are the requirements to run this template:
 - Xcode up minimum version 16.4
 
 > [!NOTE]
-> Requirements doesn't match your setup? find another template version in [releases](https://github.com/michmadheo/react_native_project_template_arch/releases).
+> Requirements doesn't match your setup? find another template version in [releases](https://github.com/ArchPeople/react_native_project_template_arch/releases).
 
 ## What's included 🚀
 
