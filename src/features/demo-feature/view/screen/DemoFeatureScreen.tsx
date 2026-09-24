@@ -8,8 +8,7 @@ import { useAppDispatch } from '@core/hooks';
 import { viewState } from '@core/common/view-state/viewState';
 import { assetColors } from '@app/assets';
 import { themePadding, themeSystemMode } from '@app/themes';
-import { useSystemMode } from '@core/hooks';
-import { useAbortController } from '@core/hooks/abort-controller/useAbortController';
+import { useSystemMode, useAbortController } from '@core/hooks';
 
 type DemoFeatureScreenProps = {};
 
