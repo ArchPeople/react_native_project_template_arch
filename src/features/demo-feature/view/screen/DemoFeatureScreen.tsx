@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import React, { memo, useEffect, useRef } from 'react';
+import React, { memo, useEffect } from 'react';
 import { AppBar, Scaffold, StatusController } from '@app/components/organisms';
 import { useSelector } from 'react-redux';
 import { RootState } from '@app/store/store';
@@ -9,7 +9,7 @@ import { viewState } from '@core/common/view-state/viewState';
 import { assetColors } from '@app/assets';
 import { themePadding, themeSystemMode } from '@app/themes';
 import { useSystemMode } from '@core/hooks';
-import axios from 'axios';
+import { useAbortController } from '@core/hooks/abort-controller/useAbortController';
 
 type DemoFeatureScreenProps = {};
 
@@ -22,12 +22,12 @@ export const DemoFeatureScreen: React.FC<DemoFeatureScreenProps> = memo(() => {
 
   const dispatch = useAppDispatch();
 
-  const cancelToken = useRef(axios.CancelToken.source());
+  const abortSignal = useAbortController();
 
   useEffect(() => {
     dispatch(
       demoSliceApiFunction({
-        cancelToken: cancelToken.current.token,
+        signal: abortSignal,
       }),
     );
   }, []);
@@ -41,12 +41,6 @@ export const DemoFeatureScreen: React.FC<DemoFeatureScreenProps> = memo(() => {
       // Do something when error
     }
   }, [demoFeatureState]);
-
-  useEffect(() => {
-    return () => {
-      cancelToken.current.cancel();
-    };
-  }, []);
 
   return (
     <Scaffold>
@@ -74,9 +68,7 @@ export const DemoFeatureScreen: React.FC<DemoFeatureScreenProps> = memo(() => {
                 : assetColors.red
           }
           onPressed={() => {
-            dispatch(
-              demoSliceApiFunction({ cancelToken: cancelToken.current.token }),
-            );
+            dispatch(demoSliceApiFunction({ signal: abortSignal }));
           }}
         />
       </View>

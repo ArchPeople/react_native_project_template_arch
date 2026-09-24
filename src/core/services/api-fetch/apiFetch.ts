@@ -34,11 +34,11 @@ export const apiFetch = {
       const response: AxiosResponse = await api.get(url, {
         params: config?.params,
         headers: config?.headers,
-        cancelToken: config?.cancelToken,
+        signal: config?.signal,
       });
       return response.data;
     } catch (error: any) {
-      return null;
+      throw error;
     }
   },
 
@@ -47,11 +47,11 @@ export const apiFetch = {
       const response: AxiosResponse = await api.post(url, config?.body, {
         params: config?.params,
         headers: config?.headers,
-        cancelToken: config?.cancelToken,
+        signal: config?.signal,
       });
       return response.data;
     } catch (error: any) {
-      return null;
+      throw error;
     }
   },
 
@@ -60,11 +60,11 @@ export const apiFetch = {
       const response: AxiosResponse = await api.put(url, config?.body, {
         params: config?.params,
         headers: config?.headers,
-        cancelToken: config?.cancelToken,
+        signal: config?.signal,
       });
       return response.data;
     } catch (error: any) {
-      return null;
+      throw error;
     }
   },
 
@@ -73,11 +73,11 @@ export const apiFetch = {
       const response: AxiosResponse = await api.delete(url, {
         params: config?.params,
         headers: config?.headers,
-        cancelToken: config?.cancelToken,
+        signal: config?.signal,
       });
       return response.data;
     } catch (error: any) {
-      return null;
+      throw error;
     }
   },
 };
