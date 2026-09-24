@@ -3,20 +3,20 @@ import { apiFetch } from '@core/services/api-fetch';
 import { apiPath } from '../api-path';
 import { IDemoDataResponse } from './interface/demoDataResponse.interface';
 import { IBaseFailure } from '@core/common/base/baseFailure.interface';
-import { CancelToken } from 'axios';
+import { GenericAbortSignal } from 'axios';
 
 interface IFetchDemoDataParams {
-  cancelToken?: CancelToken;
+  signal?: GenericAbortSignal;
 }
 
 export const demoData = {
-  fetchDemoData: async ({ cancelToken }: IFetchDemoDataParams = {}): Promise<
+  fetchDemoData: async ({ signal }: IFetchDemoDataParams = {}): Promise<
     IDemoDataResponse | IBaseFailure
   > => {
     try {
       const data: IDemoDataResponse = await apiFetch.getApi(
         config.demoDomain + apiPath.demoEndpoint,
-        { cancelToken },
+        { signal },
       );
       return data;
     } catch (error: any) {
