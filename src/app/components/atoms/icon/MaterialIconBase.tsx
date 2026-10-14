@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import MaterialIcons from '@react-native-vector-icons/material-icons';
-import { useSystemMode } from '@core/hooks';
+import { useSystemModeStore } from '@app/global-state';
 import { themeSystemMode } from '@app/themes';
 import { assetColors } from '@app/assets';
 import { ds } from '@core/general-helpers/extensions';
@@ -16,7 +16,7 @@ type MaterialIconProps = {
 
 export const MaterialIconBase: React.FC<MaterialIconProps> = memo(
   ({ name, color, darkColor, size = ds(22), onPress }) => {
-    const { systemMode } = useSystemMode();
+    const systemMode = useSystemModeStore(state => state.systemMode);
 
     const getColor = () => {
       if (color != null && systemMode == themeSystemMode.light) {

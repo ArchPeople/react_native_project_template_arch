@@ -2,7 +2,7 @@ import { Text } from 'react-native';
 import React, { memo, ReactNode } from 'react';
 import { themeFonts, themeSystemMode } from '@app/themes';
 import { assetColors } from '@app/assets';
-import { useSystemMode } from '@core/hooks';
+import { useSystemModeStore } from '@app/global-state';
 
 type TextBaseProps = {
   accessibilityLabel?: string;
@@ -14,7 +14,7 @@ type TextBaseProps = {
 
 export const TextBase: React.FC<TextBaseProps> = memo(
   ({ accessibilityLabel, style, color, darkColor, children }) => {
-    const { systemMode } = useSystemMode();
+    const systemMode = useSystemModeStore(state => state.systemMode);
     const getTextColor = () => {
       if (color != null && systemMode == themeSystemMode.light) {
         return color;

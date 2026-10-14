@@ -1,4 +1,5 @@
 import { assetColors } from '@app/assets';
+import { useSystemModeStore } from '@app/global-state';
 import { MaterialIconBase, TextBase } from '@app/components/atoms';
 import {
   themeFonts,
@@ -7,7 +8,6 @@ import {
   themeSystemMode,
 } from '@app/themes';
 import { ds } from '@core/general-helpers/extensions';
-import { useSystemMode } from '@core/hooks';
 import React, { memo, ReactNode } from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -31,7 +31,7 @@ export const AppBar: React.FC<AppBarProps> = memo(
     elevation,
   }) => {
     const navigation = useNavigation();
-    const { systemMode } = useSystemMode();
+    const systemMode = useSystemModeStore(state => state.systemMode);
 
     const getTitleColor = () => {
       if (systemMode == themeSystemMode.light) {

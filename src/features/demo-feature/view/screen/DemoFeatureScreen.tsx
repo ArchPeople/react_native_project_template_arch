@@ -8,7 +8,8 @@ import { useAppDispatch } from '@core/hooks';
 import { viewState } from '@core/common/view-state/viewState';
 import { assetColors } from '@app/assets';
 import { themePadding, themeSystemMode } from '@app/themes';
-import { useSystemMode, useAbortController } from '@core/hooks';
+import { useAbortController } from '@core/hooks';
+import { useSystemModeStore } from '@app/global-state';
 
 type DemoFeatureScreenProps = {};
 
@@ -17,7 +18,7 @@ export const DemoFeatureScreen: React.FC<DemoFeatureScreenProps> = memo(() => {
     (state: RootState) => state.demo.demoFeatureState,
   );
 
-  const { systemMode } = useSystemMode();
+  const systemMode = useSystemModeStore(state => state.systemMode);
 
   const dispatch = useAppDispatch();
 
