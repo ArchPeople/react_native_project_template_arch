@@ -6,10 +6,10 @@ import {
 } from 'react-native';
 import React, { memo, useState } from 'react';
 import { assetColors } from '@app/assets';
+import { useSystemModeStore } from '@app/global-state';
 import { themeFonts, themeSystemMode } from '@app/themes';
 import { ds } from '@core/general-helpers/extensions';
 import { TextBase } from '@app/components/atoms';
-import { useSystemMode } from '@core/hooks';
 
 type ButtonBaseProps = {
   accessibilityLabel?: string;
@@ -42,7 +42,7 @@ export const ButtonBase: React.FC<ButtonBaseProps> = memo(
     disabled = false,
   }) => {
     const [onPressed, setOnPressed] = useState(false);
-    const { systemMode } = useSystemMode();
+    const systemMode = useSystemModeStore(state => state.systemMode);
 
     const getLabelColor = () => {
       if (disabled) {

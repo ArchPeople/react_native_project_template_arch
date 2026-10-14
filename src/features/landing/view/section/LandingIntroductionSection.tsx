@@ -15,7 +15,7 @@ import {
   themePadding,
   themeSystemMode,
 } from '@app/themes';
-import { useSystemMode } from '@core/hooks';
+import { useSystemModeStore } from '@app/global-state';
 import { assetColors, assetImages } from '@app/assets';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '@app/navigation/navigator';
@@ -29,7 +29,8 @@ type LandingIntroductionSectionProps = {};
 
 export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProps> =
   memo(() => {
-    const { systemMode, setMode } = useSystemMode();
+    const systemMode = useSystemModeStore(state => state.systemMode);
+    const setSystemMode = useSystemModeStore(state => state.setsystemMode);
     const navigation = useNavigation<NavigationProp>();
     const { t } = useTranslation();
 
@@ -100,7 +101,7 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
           >
             <PressableBase
               onPress={() => {
-                setMode(themeSystemMode.light);
+                setSystemMode(themeSystemMode.light);
               }}
             >
               <TextBase
@@ -116,7 +117,7 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
             <TextBase> | </TextBase>
             <PressableBase
               onPress={() => {
-                setMode(themeSystemMode.dark);
+                setSystemMode(themeSystemMode.dark);
               }}
             >
               <TextBase
@@ -133,7 +134,7 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
         </View>
         <Gap height={ds(20)} />
         <TextBase style={[themeFonts.bodyXsLight, { textAlign: 'center' }]}>
-          ver 2.3.2
+          ver 3.0.0
         </TextBase>
         <Gap height={ds(screenSizeUtil.getBottomBarHeight) + ds(20)} />
       </GradientView>
