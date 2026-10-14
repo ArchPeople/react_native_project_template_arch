@@ -19,18 +19,13 @@ module.exports = function (plop) {
       },
       {
         type: 'add',
-        path: '../../src/features/{{kebabCase name}}/reducer/{{camelCase name}}Slice.ts',
-        templateFile: 'reducer/slice.ts.hbs',
+        path: '../../src/features/{{kebabCase name}}/store/{{camelCase name}}Store.ts',
+        templateFile: 'store/store.ts.hbs',
       },
       {
         type: 'add',
-        path: '../../src/features/{{kebabCase name}}/reducer/{{camelCase name}}State.ts',
-        templateFile: 'reducer/state.ts.hbs',
-      },
-      {
-        type: 'add',
-        path: '../../src/features/{{kebabCase name}}/repository/{{camelCase name}}Repository.ts',
-        templateFile: 'repository/repository.ts.hbs',
+        path: '../../src/features/{{kebabCase name}}/api/{{camelCase name}}Api.ts',
+        templateFile: 'api/api.ts.hbs',
       },
       {
         type: 'add',
@@ -56,19 +51,6 @@ module.exports = function (plop) {
         type: 'add',
         path: '../../src/features/{{kebabCase name}}/view/{{pascalCase name}}View.tsx',
         templateFile: 'view/view.tsx.hbs',
-      },
-      {
-        type: 'append',
-        path: '../../src/app/store/store.ts',
-        pattern: /^(import .* from .*;?)(?![\s\S]*^import)/m,
-        template:
-          "import {{camelCase name}}Reducer from '@features/{{kebabCase name}}/reducer/{{camelCase name}}Slice';",
-      },
-      {
-        type: 'append',
-        path: '../../src/app/store/store.ts',
-        pattern: /    \/\/ @plop-reducer-anchor <-- Do not remove/g,
-        template: '    {{camelCase name}}: {{camelCase name}}Reducer,',
       },
       {
         type: 'append',

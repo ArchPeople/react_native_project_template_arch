@@ -1,9 +1,9 @@
 import { StyleSheet, View } from 'react-native';
 import React, { ReactNode } from 'react';
 import { assetColors } from '@app/assets';
+import { useSystemModeStore } from '@app/global-state';
 import { Gap } from '@app/components/atoms';
 import { themeSystemMode } from '@app/themes';
-import { useSystemMode } from '@core/hooks';
 import { screenSizeUtil } from '@core/general-helpers/utils';
 
 type ScaffoldProps = {
@@ -15,7 +15,7 @@ export const Scaffold: React.FC<ScaffoldProps> = ({
   ignoreAppBarHeight = false,
   children,
 }) => {
-  const { systemMode } = useSystemMode();
+  const systemMode = useSystemModeStore(state => state.systemMode);
   return (
     <View style={styles.container}>
       {ignoreAppBarHeight ? (
