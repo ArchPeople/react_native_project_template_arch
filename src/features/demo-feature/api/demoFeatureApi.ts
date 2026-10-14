@@ -3,7 +3,7 @@ import { demoData } from '@core/data/remote';
 import { IDemoDataResponse } from '@core/data/remote/demo-data/interface/demoDataResponse.interface';
 import { IBaseFailure } from '@core/common/base/baseFailure.interface';
 
-export const useDemoFeatureGetDemoData = () => {
+export const useGetDemoData = () => {
   return useQuery({
     queryKey: ['demoFeatureData'],
     queryFn: async ({ signal }): Promise<IDemoDataResponse | IBaseFailure> => {

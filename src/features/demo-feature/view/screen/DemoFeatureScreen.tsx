@@ -4,14 +4,13 @@ import { AppBar, Scaffold, StatusController } from '@app/components/organisms';
 import { assetColors } from '@app/assets';
 import { themePadding, themeSystemMode } from '@app/themes';
 import { useSystemModeStore } from '@app/global-state';
-import { useDemoFeatureGetDemoData } from '@features/demo-feature/api/useDemoFeatureGetDemoData';
+import { useGetDemoData } from '@features/demo-feature/api/demoFeatureApi';
 
 type DemoFeatureScreenProps = {};
 
 export const DemoFeatureScreen: React.FC<DemoFeatureScreenProps> = memo(() => {
   const systemMode = useSystemModeStore(state => state.systemMode);
-  const { data, isFetching, isError, error, refetch } =
-    useDemoFeatureGetDemoData();
+  const { data, isFetching, isError, error, refetch } = useGetDemoData();
 
   useEffect(() => {
     if (isFetching) {
