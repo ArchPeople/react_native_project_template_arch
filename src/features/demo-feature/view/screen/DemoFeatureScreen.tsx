@@ -1,46 +1,27 @@
 import { StyleSheet, View } from 'react-native';
 import React, { memo, useEffect } from 'react';
 import { AppBar, Scaffold, StatusController } from '@app/components/organisms';
-import { useSelector } from 'react-redux';
-import { RootState } from '@app/store/store';
-import { demoSliceApiFunction } from '@features/demo-feature/reducer/demoSlice';
-import { useAppDispatch } from '@core/hooks';
-import { viewState } from '@core/common/view-state/viewState';
 import { assetColors } from '@app/assets';
 import { themePadding, themeSystemMode } from '@app/themes';
-import { useAbortController } from '@core/hooks';
 import { useSystemModeStore } from '@app/global-state';
+import { useDemoFeatureGetDemoData } from '@features/demo-feature/api/useDemoFeatureGetDemoData';
 
 type DemoFeatureScreenProps = {};
 
 export const DemoFeatureScreen: React.FC<DemoFeatureScreenProps> = memo(() => {
-  const demoFeatureState = useSelector(
-    (state: RootState) => state.demo.demoFeatureState,
-  );
-
   const systemMode = useSystemModeStore(state => state.systemMode);
-
-  const dispatch = useAppDispatch();
-
-  const abortSignal = useAbortController();
+  const { data, isFetching, isError, error, refetch } =
+    useDemoFeatureGetDemoData();
 
   useEffect(() => {
-    dispatch(
-      demoSliceApiFunction({
-        signal: abortSignal,
-      }),
-    );
-  }, []);
-
-  useEffect(() => {
-    if (demoFeatureState === viewState.loading) {
-      // Do something when loading
-    } else if (demoFeatureState === viewState.success) {
-      // Do something when success
-    } else if (demoFeatureState === viewState.error) {
+    if (isFetching) {
+      // Do something when fetching
+    } else if (data) {
+      // Do something when data is available
+    } else if (isError && error) {
       // Do something when error
     }
-  }, [demoFeatureState]);
+  }, [isFetching, data, isError]);
 
   return (
     <Scaffold>
@@ -59,16 +40,16 @@ export const DemoFeatureScreen: React.FC<DemoFeatureScreenProps> = memo(() => {
         <StatusController
           title={'Check API Status'}
           buttonLabel={'Check'}
-          disabled={demoFeatureState === viewState.loading}
+          disabled={isFetching}
           statusColor={
-            demoFeatureState === viewState.loading
+            isFetching
               ? assetColors.yellow
-              : demoFeatureState === viewState.success
-                ? assetColors.green
-                : assetColors.red
+              : isError
+                ? assetColors.red
+                : assetColors.green
           }
           onPressed={() => {
-            dispatch(demoSliceApiFunction({ signal: abortSignal }));
+            refetch();
           }}
         />
       </View>

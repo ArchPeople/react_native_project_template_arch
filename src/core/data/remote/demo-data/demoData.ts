@@ -21,8 +21,11 @@ export const demoData = {
       return data;
     } catch (error: any) {
       const failure: IBaseFailure = {
+        errorStatus: error.response.status,
+        errorCode: error.code,
         errorMessage: error.message,
       };
+
       return failure;
     }
   },

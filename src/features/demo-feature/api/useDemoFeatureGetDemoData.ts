@@ -1,0 +1,19 @@
+import { useQuery } from '@tanstack/react-query';
+import { demoData } from '@core/data/remote';
+import { IDemoDataResponse } from '@core/data/remote/demo-data/interface/demoDataResponse.interface';
+import { IBaseFailure } from '@core/common/base/baseFailure.interface';
+
+export const useDemoFeatureGetDemoData = () => {
+  return useQuery({
+    queryKey: ['demoFeatureData'],
+    queryFn: async ({ signal }): Promise<IDemoDataResponse | IBaseFailure> => {
+      const response = await demoData.fetchDemoData({ signal });
+
+      if ('errorStatus' in response) {
+        throw new Error(response.errorMessage);
+      }
+
+      return response;
+    },
+  });
+};
