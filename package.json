@@ -35,7 +35,7 @@
     "react-native-nitro-modules": "0.37.1",
     "react-native-safe-area-context": "5.9.1",
     "react-native-screens": "4.28.0",
-    "zustand": "^5.0.15"
+    "zustand": "5.0.15"
   },
   "devDependencies": {
     "@babel/core": "7.29.0",
