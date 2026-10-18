@@ -39,7 +39,7 @@ These are the requirements to run this template:
 
 Essentials To ease your project setup. Here you can find:
 
-- ✅ React Native 0.87.1, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
+- ✅ React Native 0.88.0, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
 - ✅ Tasty ready-to-use flavors, configured for development, staging & production environment (See [how to run](guide/how-to-run.md) guide)
 - ✅ Ready to use icons from [material icons](https://www.npmjs.com/package/@react-native-vector-icons/material-icons)
 - ✅ Consistent template for new feature with [plop.js](https://www.npmjs.com/package/plop)
@@ -47,7 +47,7 @@ Essentials To ease your project setup. Here you can find:
 - ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
 - ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
 - ✅ Cache and manage server-state with [tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-querys)
-- ✅ tiny and predictable client-state management with [zustand](https://www.npmjs.com/package/zustand) (see [demo-feature](src/features/demo-feature) for example)
+- ✅ Tiny and predictable client-state management with [zustand](https://www.npmjs.com/package/zustand) (see [demo-feature](src/features/demo-feature) for example)
 - ✅ Super fast key-value storage with [react-native-mmkv](https://github.com/mrousavy/react-native-mmkv)
 - ✅ Assortment of ready-to-use themes for styling (see [themes](src/app/themes) for example)
 - ✅ Helpful utilities and extensions (see [general-helpers](src/core/general-helpers) for example)

@@ -12,6 +12,7 @@
 		2C2374BFA6A3A19DC4B30642 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		93D904F93083E36900E74280 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D904F83083E36900E74280 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		937316E42FB4FD2900DA68FF /* FLAVOR-PLACEHOLDER.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "FLAVOR-PLACEHOLDER.md"; sourceTree = "<group>"; };
 		937316E72FB4FD8600DA68FF /* FLAVOR-PLACEHOLDER.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "FLAVOR-PLACEHOLDER.md"; sourceTree = "<group>"; };
 		937316E82FB4FD9800DA68FF /* FLAVOR-PLACHEOLDER.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "FLAVOR-PLACHEOLDER.md"; sourceTree = "<group>"; };
+		93D904F83083E36900E74280 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D73CBCD6CE2ACCF3774B0C8A /* Pods-react_native_project_template_arch.debug-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-react_native_project_template_arch.debug-staging.xcconfig"; path = "Target Support Files/Pods-react_native_project_template_arch/Pods-react_native_project_template_arch.debug-staging.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED45480F5883293AEDE73452 /* Pods-react_native_project_template_arch.debug-development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-react_native_project_template_arch.debug-development.xcconfig"; path = "Target Support Files/Pods-react_native_project_template_arch/Pods-react_native_project_template_arch.debug-development.xcconfig"; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 		13B07FAE1A68108700A75B9A /* react_native_project_template_arch */ = {
 			isa = PBXGroup;
 			children = (
+				93D904F83083E36900E74280 /* SceneDelegate.swift */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				761780EC2CA45674006654EE /* AppDelegate.swift */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				761780ED2CA45674006654EE /* AppDelegate.swift in Sources */,
+				93D904F93083E36900E74280 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
