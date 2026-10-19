@@ -70,9 +70,16 @@ async function main() {
   const packageName = await ask('What is the package name? ');
   const repositoryName = await ask('What is the repository name? ');
 
-  const oldAppName = appNameMatch?.[1];
-  const oldPackageName = namespaceMatch ? namespaceMatch[1] : null;
-  const oldRepoName = repoNameMatch ? repoNameMatch[1] : null;
+  // Get old repo name
+  const originalPackageJsonPath = 'package.json';
+  let originalPackageJsonContent = fs.readFileSync(
+    originalPackageJsonPath,
+    'utf8',
+  );
+  const oldRepoNameMatch = originalPackageJsonContent.match(
+    /"name"\s*:\s*"([^"]+)"/,
+  );
+  const originalOldRepoName = oldRepoNameMatch ? oldRepoNameMatch[1] : null;
 
   /// Add .env file
   fs.writeFileSync('.env', 'FLAVOR=development\n');
@@ -82,30 +89,36 @@ async function main() {
 
   const stringsXmlPath = 'android/app/src/main/res/values/strings.xml';
   const mainActivityPath =
-    'android/app/src/main/java/com/' + oldRepoName + '/MainActivity.kt';
+    'android/app/src/main/java/com/' + originalOldRepoName + '/MainActivity.kt';
   const mainApplicationPath =
-    'android/app/src/main/java/com/' + oldRepoName + '/MainApplication.kt';
-  const projectiOSPath = 'ios/' + oldRepoName + '.xcodeproj/project.pbxproj';
+    'android/app/src/main/java/com/' +
+    originalOldRepoName +
+    '/MainApplication.kt';
+  const projectiOSPath =
+    'ios/' + originalOldRepoName + '.xcodeproj/project.pbxproj';
   const developmentSchemePath =
     'ios/' +
-    oldRepoName +
+    originalOldRepoName +
     '.xcodeproj/xcshareddata/xcschemes/development.xcscheme';
   const stagingSchemePath =
-    'ios/' + oldRepoName + '.xcodeproj/xcshareddata/xcschemes/staging.xcscheme';
+    'ios/' +
+    originalOldRepoName +
+    '.xcodeproj/xcshareddata/xcschemes/staging.xcscheme';
   const productionSchemePath =
     'ios/' +
-    oldRepoName +
+    originalOldRepoName +
     '.xcodeproj/xcshareddata/xcschemes/production.xcscheme';
 
   const appJsonPath = 'app.json';
   const packageJsonPath = 'package.json';
   const settingsGradlePath = 'android/settings.gradle';
   const podFilePath = 'ios/Podfile';
-  // const appDelegatePath = 'ios/' + oldRepoName + '/AppDelegate.swift';
-  const sceneDelegatePath = 'ios/' + oldRepoName + '/SceneDelegate.swift';
-  const launchScreenPath = 'ios/' + oldRepoName + '/LaunchScreen.storyboard';
+  const sceneDelegatePath =
+    'ios/' + originalOldRepoName + '/SceneDelegate.swift';
+  const launchScreenPath =
+    'ios/' + originalOldRepoName + '/LaunchScreen.storyboard';
   const contentsPath =
-    'ios/' + oldRepoName + '.xcworkspace/contents.xcworkspacedata';
+    'ios/' + originalOldRepoName + '.xcworkspace/contents.xcworkspacedata';
 
   let gradleContent = fs.readFileSync(gradlePath, 'utf8');
   let stringsXmlContent = fs.readFileSync(stringsXmlPath, 'utf8');
@@ -120,7 +133,6 @@ async function main() {
   let packageJsonContent = fs.readFileSync(packageJsonPath, 'utf8');
   let settingsGradleContent = fs.readFileSync(settingsGradlePath, 'utf8');
   let podFileContent = fs.readFileSync(podFilePath, 'utf8');
-  // let appDelegateContent = fs.readFileSync(appDelegatePath, 'utf8');
   let sceneDelegateContent = fs.readFileSync(sceneDelegatePath, 'utf8');
   let launchScreenContent = fs.readFileSync(launchScreenPath, 'utf8');
   let contentsContent = fs.readFileSync(contentsPath, 'utf8');
@@ -131,6 +143,10 @@ async function main() {
   const appNameMatch = productionBlock?.[0].match(/app_name"\s*,\s*"([^"]+)"/);
 
   const repoNameMatch = packageJsonContent.match(/"name"\s*:\s*"([^"]+)"/);
+
+  const oldAppName = appNameMatch?.[1];
+  const oldPackageName = namespaceMatch ? namespaceMatch[1] : null;
+  const oldRepoName = repoNameMatch ? repoNameMatch[1] : null;
 
   if (!oldPackageName) {
     console.log('Could not find namespace!');
@@ -178,10 +194,6 @@ async function main() {
     repositoryName,
   );
   podFileContent = podFileContent.replaceAll(oldRepoName, repositoryName);
-  // appDelegateContent = appDelegateContent.replaceAll(
-  //   oldRepoName,
-  //   repositoryName,
-  // );
   launchScreenContent = launchScreenContent.replaceAll(
     oldRepoName,
     repositoryName,
@@ -200,7 +212,6 @@ async function main() {
   fs.writeFileSync(packageJsonPath, packageJsonContent);
   fs.writeFileSync(settingsGradlePath, settingsGradleContent);
   fs.writeFileSync(podFilePath, podFileContent);
-  // fs.writeFileSync(appDelegatePath, appDelegateContent);
   fs.writeFileSync(sceneDelegatePath, sceneDelegateContent);
   fs.writeFileSync(launchScreenPath, launchScreenContent);
   fs.writeFileSync(contentsPath, contentsContent);
