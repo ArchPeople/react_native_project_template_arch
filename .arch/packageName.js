@@ -68,14 +68,27 @@ async function main() {
   await new Promise(resolve => setTimeout(resolve, 1000));
   const packageName = await ask('What is the package name? ');
 
+  // Get old repo name
+  const originalPackageJsonPath = 'package.json';
+  let originalPackageJsonContent = fs.readFileSync(
+    originalPackageJsonPath,
+    'utf8',
+  );
+  const oldRepoNameMatch = originalPackageJsonContent.match(
+    /"name"\s*:\s*"([^"]+)"/,
+  );
+  const originalOldRepoName = oldRepoNameMatch ? oldRepoNameMatch[1] : null;
+
   /// 1. Update android package and app name
   const gradlePath = 'android/app/build.gradle';
   const mainActivityPath =
-    'android/app/src/main/java/com/react_native_project_template_arch/MainActivity.kt';
+    'android/app/src/main/java/com/' + originalOldRepoName + '/MainActivity.kt';
   const mainApplicationPath =
-    'android/app/src/main/java/com/react_native_project_template_arch/MainApplication.kt';
+    'android/app/src/main/java/com/' +
+    originalOldRepoName +
+    '/MainApplication.kt';
   const projectiOSPath =
-    'ios/react_native_project_template_arch.xcodeproj/project.pbxproj';
+    'ios/' + originalOldRepoName + '.xcodeproj/project.pbxproj';
 
   let gradleContent = fs.readFileSync(gradlePath, 'utf8');
   let mainActivityContent = fs.readFileSync(mainActivityPath, 'utf8');
