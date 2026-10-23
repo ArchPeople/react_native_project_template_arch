@@ -14,13 +14,9 @@
 
 ## Quick Start 🎮
 
-In your new project folder:
+Download the latest version [v3.1.0](https://github.com/ArchPeople/react_native_project_template_arch/archive/refs/tags/v3.1.0.zip)
 
-```bash
-git clone https://github.com/ArchPeople/react_native_project_template_arch.git
-```
-
-Or download via [releases](https://github.com/ArchPeople/react_native_project_template_arch/releases).
+Or check other versions in [releases](https://github.com/ArchPeople/react_native_project_template_arch/releases).
 
 ## Requirements 🛠️
 
