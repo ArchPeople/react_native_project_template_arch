@@ -85,27 +85,27 @@ export const themeFonts = {
 
   // Font weights
   get extraBold() {
-    return { fontWeight: '800' };
+    return { fontWeight: '800' } as const;
   },
   get bold() {
-    return { fontWeight: '700' };
+    return { fontWeight: '700' } as const;
   },
   get semiBold() {
-    return { fontWeight: '600' };
+    return { fontWeight: '600' } as const;
   },
   get medium() {
-    return { fontWeight: '500' };
+    return { fontWeight: '500' } as const;
   },
   get regular() {
-    return { fontWeight: '400' };
+    return { fontWeight: '400' } as const;
   },
   get light() {
-    return { fontWeight: '300' };
+    return { fontWeight: '300' } as const;
   },
 
   // Font Style
   get italic() {
-    return { fontStyle: 'italic' };
+    return { fontStyle: 'italic' } as const;
   },
 
   ///////////////////////////// FONT BY SIZE //////////////////////////////
