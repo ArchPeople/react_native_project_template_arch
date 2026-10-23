@@ -20,22 +20,22 @@
     "plop:feature": "plop --plopfile plop-templates/feature/plop-feature.js"
   },
   "dependencies": {
-    "@react-native-vector-icons/material-icons": "13.1.4",
-    "@react-navigation/native": "7.5.0",
-    "@react-navigation/native-stack": "7.20.0",
-    "@tanstack/react-query": "5.104.2",
+    "@react-native-vector-icons/material-icons": "14.0.0",
+    "@react-navigation/native": "7.5.1",
+    "@react-navigation/native-stack": "7.21.0",
+    "@tanstack/react-query": "5.104.5",
     "axios": "1.20.0",
-    "i18next": "26.4.2",
+    "i18next": "26.5.6",
     "react": "19.3.0",
-    "react-i18next": "17.0.16",
+    "react-i18next": "17.1.3",
     "react-native": "0.88.0",
     "react-native-linear-gradient": "2.8.3",
     "react-native-localize": "3.7.2",
     "react-native-mmkv": "4.3.2",
     "react-native-nitro-modules": "0.37.1",
-    "react-native-safe-area-context": "5.9.1",
-    "react-native-screens": "4.28.0",
-    "zustand": "5.0.15"
+    "react-native-safe-area-context": "5.10.1",
+    "react-native-screens": "4.30.0",
+    "zustand": "5.0.16"
   },
   "devDependencies": {
     "@babel/core": "7.29.0",
@@ -56,7 +56,7 @@
     "eslint": "10.7.0",
     "jest": "30.4.2",
     "plop": "4.0.5",
-    "prettier": "3.9.6",
+    "prettier": "3.9.10",
     "react-test-renderer": "19.3.0",
     "typescript": "6.0.3"
   },
