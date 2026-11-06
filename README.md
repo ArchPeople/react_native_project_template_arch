@@ -14,7 +14,7 @@
 
 ## Quick Start 🎮
 
-Download the latest version [v3.1.0](https://github.com/ArchPeople/react_native_project_template_arch/archive/refs/tags/v3.1.0.zip)
+Download the latest version [v3.1.1](https://github.com/ArchPeople/react_native_project_template_arch/archive/refs/tags/v3.1.1.zip)
 
 Or check other versions in [releases](https://github.com/ArchPeople/react_native_project_template_arch/releases).
 
@@ -35,7 +35,7 @@ These are the requirements to run this template:
 
 Essentials To ease your project setup. Here you can find:
 
-- ✅ React Native 0.88.0, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
+- ✅ React Native 0.88.1, up-to-date with the latest [react-native](https://www.npmjs.com/package/react-native) version
 - ✅ Tasty ready-to-use flavors, configured for development, staging & production environment (See [how to run](guide/how-to-run.md) guide)
 - ✅ Ready to use icons from [material icons](https://www.npmjs.com/package/@react-native-vector-icons/material-icons)
 - ✅ Consistent template for new feature with [plop.js](https://www.npmjs.com/package/plop)
@@ -43,6 +43,7 @@ Essentials To ease your project setup. Here you can find:
 - ✅ The one and only navigation system with [react-navigation](https://www.npmjs.com/package/@react-navigation/native)
 - ✅ Robust API Fetching with [axios](https://www.npmjs.com/package/axios)
 - ✅ Cache and manage server-state with [tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-querys)
+- ✅ Smooth Animation with [react-native-reanimated](https://www.npmjs.com/package/react-native-reanimated)
 - ✅ Tiny and predictable client-state management with [zustand](https://www.npmjs.com/package/zustand) (see [demo-feature](src/features/demo-feature) for example)
 - ✅ Super fast key-value storage with [react-native-mmkv](https://github.com/mrousavy/react-native-mmkv)
 - ✅ Assortment of ready-to-use themes for styling (see [themes](src/app/themes) for example)

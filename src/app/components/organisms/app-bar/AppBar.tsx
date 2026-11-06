@@ -60,16 +60,6 @@ export const AppBar: React.FC<AppBarProps> = memo(
       }
     };
 
-    const getArrowBackColor = () => {
-      {
-        if (systemMode == themeSystemMode.light) {
-          return assetColors.black;
-        } else {
-          return assetColors.white;
-        }
-      }
-    };
-
     return (
       <View
         style={[
