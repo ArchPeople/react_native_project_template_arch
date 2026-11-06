@@ -14,7 +14,7 @@
 
 ## Quick Start 🎮
 
-Download the latest version [v3.1.0](https://github.com/ArchPeople/react_native_project_template_arch/archive/refs/tags/v3.1.0.zip)
+Download the latest version [v3.1.1](https://github.com/ArchPeople/react_native_project_template_arch/archive/refs/tags/v3.1.1.zip)
 
 Or check other versions in [releases](https://github.com/ArchPeople/react_native_project_template_arch/releases).
 
