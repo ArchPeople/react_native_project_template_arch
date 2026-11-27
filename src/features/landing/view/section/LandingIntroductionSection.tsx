@@ -49,27 +49,49 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
         style={styles.main}
       >
         <View style={styles.container}>
-          <Gap height={ds(150)} />
+          <Gap height={ds(screenSizeUtil.isTablet ? 50 : 150)} />
           <Image
             source={
               systemMode == themeSystemMode.light
                 ? assetImages.archLogoBlack
                 : assetImages.archLogoWhite
             }
-            style={{ height: ds(80), resizeMode: 'contain' }}
+            style={{
+              height: ds(screenSizeUtil.isTablet ? 60 : 80),
+              resizeMode: 'contain',
+            }}
           />
-          <Gap height={ds(80)} />
-          <TextBase style={themeFonts.h4ExtraBold}>
+          <Gap height={ds(screenSizeUtil.isTablet ? 40 : 80)} />
+          <TextBase
+            style={
+              screenSizeUtil.isTablet
+                ? themeFonts.h5ExtraBold
+                : themeFonts.h4ExtraBold
+            }
+          >
             {t('welcome_message', { name: 'Arch' })}
           </TextBase>
           <Gap height={ds(20)} />
-          <TextBase style={[themeFonts.bodySmLight, { textAlign: 'center' }]}>
+          <TextBase
+            style={[
+              screenSizeUtil.isTablet
+                ? themeFonts.bodyXsLight
+                : themeFonts.bodySmLight,
+              { textAlign: 'center' },
+            ]}
+          >
             {t('introduction_message')}
           </TextBase>
-          <Gap height={ds(40)} />
+          <Gap height={ds(screenSizeUtil.isTablet ? 30 : 40)} />
           <ButtonBase
+            height={ds(screenSizeUtil.isTablet ? 40 : 50)}
             width={ds(180)}
             label={'Demo Feature'}
+            labelStyle={
+              screenSizeUtil.isTablet
+                ? themeFonts.bodySmLight
+                : themeFonts.bodyMdRegular
+            }
             onPress={() => {
               navigation.navigate('Demo');
             }}
@@ -133,10 +155,22 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
           </View>
         </View>
         <Gap height={ds(20)} />
-        <TextBase style={[themeFonts.bodyXsLight, { textAlign: 'center' }]}>
+        <TextBase
+          style={[
+            screenSizeUtil.isTablet
+              ? themeFonts.captionLight
+              : themeFonts.bodyXsLight,
+            { textAlign: 'center' },
+          ]}
+        >
           ver 3.1.1
         </TextBase>
-        <Gap height={ds(screenSizeUtil.getBottomBarHeight) + ds(20)} />
+        <Gap
+          height={
+            ds(screenSizeUtil.getBottomBarHeight) +
+            ds(screenSizeUtil.isTablet ? 0 : 20)
+          }
+        />
       </GradientView>
     );
   });
