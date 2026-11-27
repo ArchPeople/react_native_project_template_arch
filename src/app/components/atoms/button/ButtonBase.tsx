@@ -104,7 +104,7 @@ export const ButtonBase: React.FC<ButtonBaseProps> = memo(
         ]}
       >
         <TextBase
-          style={[labelStyle, themeFonts.bodyMdRegular]}
+          style={[themeFonts.bodyMdRegular, labelStyle]}
           color={getLabelColor()}
         >
           {label}
