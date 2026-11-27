@@ -163,7 +163,7 @@ export const LandingIntroductionSection: React.FC<LandingIntroductionSectionProp
             { textAlign: 'center' },
           ]}
         >
-          ver 3.1.1
+          ver 3.2.0
         </TextBase>
         <Gap
           height={
